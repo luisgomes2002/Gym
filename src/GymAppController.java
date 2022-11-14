@@ -12,6 +12,7 @@ public class GymAppController
     private Stage stage;
     private Scene scene;
     private Parent root;
+    
 
     public void swichToGymApp(ActionEvent event) throws IOException
     {
@@ -93,8 +94,12 @@ public class GymAppController
     }
 
     @FXML
-    void sair(ActionEvent event)
+    void sair(ActionEvent event) throws IOException
     {
-
+        Parent root = FXMLLoader.load(getClass().getResource("Login.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root, 440, 350);
+        stage.setScene(scene);
+        stage.show();
     }
 }

@@ -11,8 +11,8 @@ public class App extends Application
     {
         try
         {
-            Parent root = FXMLLoader.load(getClass().getResource("GymApp.fxml"));
-            Scene scene = new Scene(root);
+            Parent root = FXMLLoader.load(getClass().getResource("Login.fxml"));
+            Scene scene = new Scene(root, 440, 350);
             //scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
             String css = this.getClass().getResource("application.css").toExternalForm();
             scene.getStylesheets().add(css);
