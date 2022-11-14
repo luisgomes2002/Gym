@@ -8,12 +8,24 @@ public class App extends Application
 {
     @Override
     public void start(Stage primaryStage) throws Exception
-    {      
-        Parent root = FXMLLoader.load(getClass().getResource("GymApp.fxml"));
-        primaryStage.setTitle("Gym");           
-        primaryStage.setScene(new Scene(root));
-        primaryStage.show();    
+    {
+        try
+        {
+            Parent root = FXMLLoader.load(getClass().getResource("GymApp.fxml"));
+            Scene scene = new Scene(root);
+            //scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+            String css = this.getClass().getResource("application.css").toExternalForm();
+            scene.getStylesheets().add(css);
+            primaryStage.setTitle("Gym");           
+            primaryStage.setScene(scene);
+            primaryStage.show();    
+        }
+        catch(Exception e)
+        {
+            e.printStackTrace();
+        }    
     }
+    
     public static void main(String[] args)
     {
         launch(args);

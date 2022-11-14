@@ -7,7 +7,7 @@ public class GymAppController
     @FXML
     void casdastraClien(ActionEvent event)
     {
-
+        
     }
 
     @FXML
