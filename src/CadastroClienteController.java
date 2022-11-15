@@ -1,17 +1,55 @@
+import java.beans.Statement;
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import javafx.scene.Node;
 
 public class CadastroClienteController
-{
+{  
     private Stage stage;
     private Scene scene;
     private Parent root;
+
+    @FXML
+    private Button btnCadastrarCliente;
+
+    @FXML
+    private TextField nomeCliente;
+
+    @FXML
+    void fazerCadastroCliente(ActionEvent event)
+    {
+        try
+        {
+            Connection con;
+            Statement st;
+            Class.forName("com.mysql.jdbc.Driver");
+            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/cadastrocliente","root","");
+            st = (Statement) con.createStatement();
+            ((java.sql.Statement) st).executeUpdate("Insert into cliente values('" + nomeCliente.getText() + "')");
+            nomeCliente.setText("");
+            nomeCliente.requestFocus();
+        }
+        catch(ClassNotFoundException ex)
+        {
+            System.out.println("O diver nao esta na biblioteca");
+        }
+        catch(SQLException ex)
+        {
+            System.out.println("Erro na conexap com o banco de dados");
+        }
+
+    }
     
 
     public void swichToGymApp(ActionEvent event) throws IOException

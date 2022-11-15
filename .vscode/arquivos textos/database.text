@@ -1,0 +1,16 @@
+create database cadastrocliente
+default character set utf8
+default collate utf8_general_ci; //criar um banco de dados com acentuação
+
+create table cliente(
+id int not null auto_increment,
+nome varchar(30) not null,
+nascimento date,
+cpf int,
+endereco varchar(40),
+email varchar(40),
+telefone int,
+sexo enum('M', 'F'),
+nacionalidade varchar(20) default 'Brasil',
+primary key(id)
+)default charset = utf8;
