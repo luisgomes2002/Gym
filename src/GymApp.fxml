@@ -13,7 +13,7 @@
          <children>
             <Pane prefHeight="144.0" prefWidth="209.0">
                <children>
-                  <Label fx:id="titleGym" layoutX="40.0" layoutY="38.0" prefHeight="68.0" prefWidth="129.0" text="Gym" textFill="WHITE">
+                  <Label layoutX="40.0" layoutY="38.0" prefHeight="68.0" prefWidth="129.0" text="Gym" textFill="WHITE">
                      <font>
                         <Font name="Bookman Old Style" size="55.0" />
                      </font></Label>

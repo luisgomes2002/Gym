@@ -1,9 +1,8 @@
-import java.beans.Statement;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.SQLException;
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -29,16 +28,18 @@ public class CadastroClienteController
     @FXML
     void fazerCadastroCliente(ActionEvent event)
     {
+        Connection conexao = null;
         try
         {
-            Connection con;
-            Statement st;
             Class.forName("com.mysql.jdbc.Driver");
-            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/cadastrocliente","root","");
-            st = (Statement) con.createStatement();
-            ((java.sql.Statement) st).executeUpdate("Insert into cliente values('" + nomeCliente.getText() + "')");
+            conexao = DriverManager.getConnection("jdbc:mysql://localhost:3306/cadastrocliente","root","");
+            ResultSet rsCliente = conexao.createStatement().executeQuery("SELECT * FROM cliente");
+            
             nomeCliente.setText("");
-            nomeCliente.requestFocus();
+            while(rsCliente.next())
+            {
+                System.out.println("Nome: " + rsCliente.getString("nome"));
+            }
         }
         catch(ClassNotFoundException ex)
         {
