@@ -44,16 +44,6 @@ public class GymAppController
     }
 
     @FXML
-    void excluir(ActionEvent event) throws IOException
-    {
-        Parent root = FXMLLoader.load(getClass().getResource("Excluir.fxml"));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root, 984, 566);
-        stage.setScene(scene);
-        stage.show();
-    }
-
-    @FXML
     void listClient(ActionEvent event) throws IOException
     {
         Parent root = FXMLLoader.load(getClass().getResource("ListaClientes.fxml"));
@@ -77,16 +67,6 @@ public class GymAppController
     void listTreino(ActionEvent event) throws IOException
     {
         Parent root = FXMLLoader.load(getClass().getResource("ListaDeTreino.fxml"));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root, 984, 566);
-        stage.setScene(scene);
-        stage.show();
-    }
-
-    @FXML
-    void unicClienFunc(ActionEvent event) throws IOException 
-    {
-        Parent root = FXMLLoader.load(getClass().getResource("UnicoCF.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root, 984, 566);
         stage.setScene(scene);
