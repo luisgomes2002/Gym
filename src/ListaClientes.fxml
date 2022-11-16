@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="566.0" prefWidth="984.0" style="-fx-background-color: #5b6b8b;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CadastroClienteController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="566.0" prefWidth="984.0" style="-fx-background-color: #5b6b8b;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ListaClientesController">
    <children>
       <GridPane layoutX="220.0" layoutY="133.0" prefHeight="413.0" prefWidth="751.0">
         <columnConstraints>
@@ -34,8 +34,8 @@
             <HBox prefHeight="100.0" prefWidth="200.0">
                <children>
                   <TextField fx:id="barraDePesquisa" />
-                  <Button fx:id="bntDePesquisa" mnemonicParsing="false" prefHeight="15.0" prefWidth="129.0" style="-fx-background-color: #202435;" text="Pesquisar" textFill="WHITE" />
-                  <Button fx:id="bntDeExcluir" layoutX="159.0" layoutY="10.0" mnemonicParsing="false" prefHeight="15.0" prefWidth="129.0" style="-fx-background-color: #202435;" text="Excluir" textFill="WHITE" />
+                  <Button fx:id="bntDePesquisa" mnemonicParsing="false" onAction="#pesquisarCliente" prefHeight="15.0" prefWidth="129.0" style="-fx-background-color: #202435;" text="Pesquisar" textFill="WHITE" />
+                  <Button fx:id="bntDeExcluir" layoutX="159.0" layoutY="10.0" mnemonicParsing="false" onAction="#excluirCliente" prefHeight="15.0" prefWidth="129.0" style="-fx-background-color: #202435;" text="Excluir" textFill="WHITE" />
                </children>
             </HBox>
          </children>

@@ -1,4 +1,11 @@
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import com.mysql.cj.jdbc.Driver;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -29,9 +36,52 @@ public class ListaClientesController
     private Button btnVoltar;
 
     @FXML
+    void excluirCliente(ActionEvent event)
+    {
+
+    }
+
+    @FXML
+    void pesquisarCliente(ActionEvent event)
+    {
+        try
+        {
+            Driver driver = new Driver();
+            DriverManager.registerDriver(driver);
+
+            Connection c = DriverManager.getConnection("jdbc:mysql://localhost:3306/cadastrocliente", "root", "");
+
+            PreparedStatement stmt = c.prepareStatement("SELECT * FROM cadastrocliente.cliente");
+
+            ResultSet rs = stmt.executeQuery();
+
+            while(rs.next())
+            {
+                System.out.println("Nome: " + rs.getString("nome"));
+                System.out.println("Nascimento: " + rs.getString("nascimento"));
+                System.out.println("CPF: " + rs.getString("cpf"));
+                System.out.println("Endereco: " + rs.getString("endereco"));
+                System.out.println("Email: " + rs.getString("email"));
+                System.out.println("Telefone: " + rs.getString("telefone"));
+                System.out.println("Sexo: " + rs.getString("sexo"));
+                System.out.println("Nascionalidade: " + rs.getString("nacionalidade"));
+                System.out.println("Treino: " + rs.getString("treino"));
+            }
+
+            stmt.close();
+            c.close();
+        }
+        catch(SQLException ex)
+        {
+            System.out.println("Erro na conexao com o banco de dados");
+        }
+
+    }
+
+    @FXML
     void swichToGymApp(ActionEvent event) throws IOException
     {
-        Parent root = FXMLLoader.load(getClass().getResource("GymApp.fxml"));
+        root = FXMLLoader.load(getClass().getResource("GymApp.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root, 984, 566);
         stage.setScene(scene);

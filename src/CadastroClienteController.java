@@ -1,8 +1,9 @@
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.ResultSet;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import com.mysql.jdbc.Driver;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -26,38 +27,75 @@ public class CadastroClienteController
     private Button btnCadastrar;
 
     @FXML
+    private TextField cpfCliente;
+
+    @FXML
+    private TextField emailCliente;
+
+    @FXML
+    private TextField enderecoCliente;
+
+    @FXML
+    private TextField nacionalidadeCliente;
+
+    @FXML
+    private TextField nascimentoCliente;
+
+    @FXML
     private TextField nomeCliente;
 
     @FXML
+    private TextField sexoCliente;
+
+    @FXML
+    private TextField telefCliente;
+
+    @FXML
+    private TextField tipoTreinoCliente;
+
+    @FXML
     void fazerCadastroCliente(ActionEvent event)
-    {
-        Connection conexao = null;
+    {       
         try
         {
-            Class.forName("com.mysql.jdbc.Driver");
-            conexao = DriverManager.getConnection("jdbc:mysql://localhost:3306/cadastrocliente","root","");
-            ResultSet rsCliente = conexao.createStatement().executeQuery("SELECT * FROM cliente");
+            Driver driver = new Driver();
+            DriverManager.registerDriver(driver);
+
+            Connection c = DriverManager.getConnection("jdbc:mysql://localhost:3306/cadastrocliente", "root", "");
+            PreparedStatement stmt = c.prepareStatement("INSERT INTO cadastrocliente.cliente (nome, nascimento, cpf, endereco, email, telefone, sexo, nacionalidade, treino) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
+
+            stmt.setString(1, nomeCliente.getText());
+            stmt.setString(2, nascimentoCliente.getText());
+            stmt.setString(3, cpfCliente.getText());
+            stmt.setString(4, enderecoCliente.getText());
+            stmt.setString(5, emailCliente.getText());
+            stmt.setString(6, telefCliente.getText());
+            stmt.setString(7, sexoCliente.getText());
+            stmt.setString(8, nacionalidadeCliente.getText());
+            stmt.setString(9, tipoTreinoCliente.getText());
+            
+            stmt.executeUpdate();
             
             nomeCliente.setText("");
-            while(rsCliente.next())
-            {
-                System.out.println("Nome: " + rsCliente.getString("nome"));
-            }
-        }
-        catch(ClassNotFoundException ex)
-        {
-            System.out.println("O diver nao esta na biblioteca");
+            nascimentoCliente.setText("");
+            cpfCliente.setText("");
+            enderecoCliente.setText("");
+            emailCliente.setText("");
+            telefCliente.setText("");
+            sexoCliente.setText("");
+            nacionalidadeCliente.setText("");
+            tipoTreinoCliente.setText("");
+        
         }
         catch(SQLException ex)
         {
-            System.out.println("Erro na conexap com o banco de dados");
+            System.out.println("Erro na conexao com o banco de dados");
         }
-
     }
 
     public void swichToGymApp(ActionEvent event) throws IOException
     {
-        Parent root = FXMLLoader.load(getClass().getResource("GymApp.fxml"));
+        root = FXMLLoader.load(getClass().getResource("GymApp.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root, 984, 566);
         stage.setScene(scene);

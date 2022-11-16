@@ -24,57 +24,57 @@
             <Button fx:id="bntVoltar" layoutX="10.0" layoutY="480.0" mnemonicParsing="false" onAction="#swichToGymApp" prefHeight="53.0" prefWidth="209.0" style="-fx-background-color: #202435;" text="Voltar" textFill="WHITE" />
          </children>
       </VBox>
-      <TextField fx:id="nomeCliente" layoutX="413.0" layoutY="50.0" prefHeight="25.0" prefWidth="346.0" AnchorPane.bottomAnchor="490.0" AnchorPane.leftAnchor="413.0" AnchorPane.rightAnchor="226.0" AnchorPane.topAnchor="50.0" />
-      <TextField layoutX="413.0" layoutY="100.0" prefHeight="25.0" prefWidth="346.0" AnchorPane.leftAnchor="413.0" AnchorPane.rightAnchor="225.0" />
-      <TextField layoutX="412.0" layoutY="150.0" prefHeight="25.0" prefWidth="346.0" AnchorPane.leftAnchor="412.0" AnchorPane.rightAnchor="226.0" />
-      <TextField layoutX="412.0" layoutY="200.0" prefHeight="25.0" prefWidth="346.0" AnchorPane.leftAnchor="412.0" AnchorPane.rightAnchor="226.0" />
-      <TextField layoutX="412.0" layoutY="250.0" prefHeight="25.0" prefWidth="346.0" AnchorPane.leftAnchor="412.0" AnchorPane.rightAnchor="226.0" />
-      <TextField layoutX="412.0" layoutY="300.0" prefHeight="25.0" prefWidth="346.0" AnchorPane.leftAnchor="412.0" AnchorPane.rightAnchor="226.0" />
-      <Label layoutX="280.0" layoutY="50.0" text="Nome:" textFill="WHITE">
+      <TextField fx:id="nomeCliente" layoutX="412.0" layoutY="50.0" prefHeight="25.0" prefWidth="346.0" AnchorPane.leftAnchor="412.0" AnchorPane.rightAnchor="226.0" />
+      <TextField fx:id="nascimentoCliente" layoutX="412.0" layoutY="100.0" prefHeight="25.0" prefWidth="346.0" AnchorPane.bottomAnchor="439.0" AnchorPane.leftAnchor="411.0" AnchorPane.rightAnchor="228.0" AnchorPane.topAnchor="101.0" />
+      <TextField fx:id="cpfCliente" layoutX="412.0" layoutY="150.0" prefHeight="25.0" prefWidth="346.0" AnchorPane.leftAnchor="412.0" AnchorPane.rightAnchor="226.0" />
+      <TextField fx:id="enderecoCliente" layoutX="412.0" layoutY="200.0" prefHeight="25.0" prefWidth="346.0" AnchorPane.leftAnchor="412.0" AnchorPane.rightAnchor="226.0" />
+      <TextField fx:id="emailCliente" layoutX="412.0" layoutY="250.0" prefHeight="25.0" prefWidth="346.0" AnchorPane.leftAnchor="412.0" AnchorPane.rightAnchor="226.0" />
+      <TextField fx:id="telefCliente" layoutX="412.0" layoutY="300.0" prefHeight="25.0" prefWidth="346.0" AnchorPane.leftAnchor="412.0" AnchorPane.rightAnchor="226.0" />
+      <Label layoutX="280.0" layoutY="50.0" text="Nome*" textFill="WHITE">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="280.0" layoutY="100.0" text="Nascimento:" textFill="WHITE">
+      <Label layoutX="280.0" layoutY="100.0" text="Nascimento*" textFill="WHITE">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="280.0" layoutY="150.0" text="CPF:" textFill="WHITE">
+      <Label layoutX="280.0" layoutY="150.0" text="CPF*" textFill="WHITE">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="280.0" layoutY="200.0" text="Endereco:" textFill="WHITE">
+      <Label layoutX="280.0" layoutY="200.0" text="Endereco" textFill="WHITE">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="280.0" layoutY="250.0" text="Email:" textFill="WHITE">
+      <Label layoutX="280.0" layoutY="250.0" text="Email" textFill="WHITE">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="280.0" layoutY="300.0" text="Telefone:" textFill="WHITE">
+      <Label layoutX="280.0" layoutY="300.0" text="Telefone*" textFill="WHITE">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
       <Button fx:id="btnCadastrar" layoutX="550.0" layoutY="510.0" mnemonicParsing="false" onAction="#fazerCadastroCliente" text="Cadastrar" />
-      <Label layoutX="280.0" layoutY="350.0" text="Sexo:" textFill="WHITE">
+      <Label layoutX="280.0" layoutY="350.0" text="Sexo*" textFill="WHITE">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="280.0" layoutY="400.0" text="Nacionalidade:" textFill="WHITE">
+      <Label layoutX="280.0" layoutY="400.0" text="Nacionalidade" textFill="WHITE">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <TextField layoutX="412.0" layoutY="350.0" prefHeight="25.0" prefWidth="346.0" />
-      <TextField layoutX="412.0" layoutY="400.0" prefHeight="25.0" prefWidth="346.0" />
-      <TextField layoutX="412.0" layoutY="450.0" prefHeight="25.0" prefWidth="346.0" />
-      <Label layoutX="280.0" layoutY="450.0" text="Tipo do Treino:" textFill="WHITE">
+      <TextField fx:id="sexoCliente" layoutX="412.0" layoutY="350.0" prefHeight="25.0" prefWidth="346.0" />
+      <TextField fx:id="nacionalidadeCliente" layoutX="412.0" layoutY="400.0" prefHeight="25.0" prefWidth="346.0" />
+      <TextField fx:id="tipoTreinoCliente" layoutX="412.0" layoutY="450.0" prefHeight="25.0" prefWidth="346.0" />
+      <Label layoutX="280.0" layoutY="450.0" text="Tipo do Treino*" textFill="WHITE">
          <font>
             <Font size="18.0" />
          </font>
