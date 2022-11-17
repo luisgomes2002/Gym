@@ -14,26 +14,15 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import javafx.scene.Node;
 
-public class ListaClientesController implements Initializable
+public class ListaFuncionarioController implements Initializable
 {
     private Stage stage;
     private Scene scene;
     private Parent root;
-
-    @FXML
-    private TableColumn<?, ?> ID;
-
-    @FXML
-    private TableColumn<?, ?> Nome;
-
-    @FXML
-    private TableView<?> tableViewClientes;
 
     @FXML
     private TextField barraDePesquisa;
@@ -50,7 +39,7 @@ public class ListaClientesController implements Initializable
     @FXML
     void excluirCliente(ActionEvent event)
     {
-
+        
     }
 
     @Override
@@ -63,9 +52,9 @@ public class ListaClientesController implements Initializable
 
             Connection c = DriverManager.getConnection("jdbc:mysql://localhost:3306/cadastrocliente", "root", "");
 
-            PreparedStatement stmt = c.prepareStatement("SELECT * FROM cadastrocliente.cliente");
+            PreparedStatement stmt = c.prepareStatement("SELECT * FROM cadastrocliente.funcionario");
 
-            ResultSet rs = stmt.executeQuery();
+            ResultSet rs = stmt.executeQuery();  
 
             while(rs.next())
             {
@@ -77,7 +66,8 @@ public class ListaClientesController implements Initializable
                 System.out.println("Telefone: " + rs.getString("telefone"));
                 System.out.println("Sexo: " + rs.getString("sexo"));
                 System.out.println("Nascionalidade: " + rs.getString("nacionalidade"));
-                System.out.println("Treino: " + rs.getString("treino"));
+                System.out.println("Cargo: " + rs.getString("cargo"));
+                System.out.println("Salario: " + rs.getString("salario"));
             }
 
             stmt.close();
@@ -87,12 +77,11 @@ public class ListaClientesController implements Initializable
         {
             System.out.println("Erro na conexao com o banco de dados");
         }
-
-            
+        
     }
-    
+
     @FXML
-    void pesquisarCliente(ActionEvent event)
+    void pesquisarFuncionario(ActionEvent event)
     {
         
     }
@@ -107,5 +96,6 @@ public class ListaClientesController implements Initializable
         stage.show();
     }
 
-}
+    
 
+}

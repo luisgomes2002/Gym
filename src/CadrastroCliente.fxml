@@ -60,7 +60,6 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <Button fx:id="btnCadastrar" layoutX="550.0" layoutY="510.0" mnemonicParsing="false" onAction="#fazerCadastroCliente" text="Cadastrar" />
       <Label layoutX="280.0" layoutY="350.0" text="Sexo*" textFill="WHITE">
          <font>
             <Font size="18.0" />
@@ -79,5 +78,6 @@
             <Font size="18.0" />
          </font>
       </Label>
+      <Button fx:id="btnCadastrar" layoutX="515.0" layoutY="500.0" mnemonicParsing="false" onAction="#fazerCadastroCliente" prefHeight="36.0" prefWidth="122.0" style="-fx-background-color: #202435;" text="Cadastrar" textFill="WHITE" />
    </children>
 </AnchorPane>
