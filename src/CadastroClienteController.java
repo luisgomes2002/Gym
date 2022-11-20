@@ -1,3 +1,5 @@
+
+
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -95,7 +97,7 @@ public class CadastroClienteController
 
     public void swichToGymApp(ActionEvent event) throws IOException
     {
-        root = FXMLLoader.load(getClass().getResource("GymApp.fxml"));
+        root = FXMLLoader.load(getClass().getResource("interface/GymApp.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root, 984, 566);
         stage.setScene(scene);
