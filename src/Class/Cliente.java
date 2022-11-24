@@ -2,26 +2,26 @@ package Class;
 
 public class Cliente
 {
+	private int id;
     private String nome;
     private int tel;
     private int nascimento;
     private String email;
     private String endereco;
-    private int cpf;
-    private int id;
+    private int cpf;  
     private String sexo;
     private String nacionalidade;
     private String treino;
 
-    public Cliente(String nome, int tel, int nascimento, String email, String endereco, int cpf, int id, String sexo, String nacionalidade, String treino)
+    public Cliente(int id, String nome, int tel, int nascimento, String email, String endereco, int cpf, String sexo, String nacionalidade, String treino)
     {
+    	this.id = id;
         this.nome = nome;
         this.tel = tel;
         this.nascimento = nascimento;
         this.email = email;
         this.endereco = endereco;
-        this.cpf = cpf;
-        this.id = id;
+        this.cpf = cpf;  
         this.sexo = sexo;
         this.nacionalidade = nacionalidade;
         this.treino = treino;
@@ -32,6 +32,16 @@ public class Cliente
 
     }
 
+    public int getId()
+    {
+        return id;
+    }
+
+    public void setId(int id)
+    {
+        this.id = id;
+    }
+    
     public String getNome()
     {
         return nome;
@@ -89,16 +99,6 @@ public class Cliente
     public void setNascimento(int nascimento)
     {
         this.nascimento = nascimento;
-    }
-    
-    public int getId()
-    {
-        return id;
-    }
-
-    public void setId(int id)
-    {
-        this.id = id;
     }
 
     public String getSexo()

@@ -1,11 +1,9 @@
-
-
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
- 
+
 public class App extends Application
 {
     @Override
@@ -15,7 +13,7 @@ public class App extends Application
         {
             Parent root = FXMLLoader.load(getClass().getResource("interface/Login.fxml"));
             Scene scene = new Scene(root, 440, 350);
-            //scene.getStylesheets().add(getClass().getResource("css/application.css").toExternalForm());
+            scene.getStylesheets().add(getClass().getResource("css/application.css").toExternalForm());
             //String css = this.getClass().getResource("application.css").toExternalForm();//使ってねぇ
             //scene.getStylesheets().add(css);//これも
             primaryStage.setTitle("Gym");           

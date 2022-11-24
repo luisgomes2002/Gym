@@ -1,5 +1,7 @@
 
 
+
+
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -68,8 +70,8 @@ public class CadastroFuncionarioController
             Driver driver = new Driver();
             DriverManager.registerDriver(driver);
 
-            Connection c = DriverManager.getConnection("jdbc:mysql://localhost:3306/cadastrocliente", "root", "");
-            PreparedStatement stmt = c.prepareStatement("INSERT INTO cadastrocliente.funcionario (nome, nascimento, cpf, endereco, email, telefone, sexo, nacionalidade, cargo, salario) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+            Connection c = DriverManager.getConnection("jdbc:mysql://localhost:3306/gymdatabase", "root", "");
+            PreparedStatement stmt = c.prepareStatement("INSERT INTO gymdatabase.funcionario (nome, nascimento, cpf, endereco, email, telefone, sexo, nacionalidade, cargo, salario) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 
             stmt.setString(1, nomeFunci.getText());
             stmt.setString(2, nascimentoFunci.getText());

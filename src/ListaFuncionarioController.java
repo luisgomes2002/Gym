@@ -1,5 +1,3 @@
-
-
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
@@ -52,9 +50,9 @@ public class ListaFuncionarioController implements Initializable
             Driver driver = new Driver();
             DriverManager.registerDriver(driver);
 
-            Connection c = DriverManager.getConnection("jdbc:mysql://localhost:3306/cadastrocliente", "root", "");
+            Connection c = DriverManager.getConnection("jdbc:mysql://localhost:3306/gymdatabase", "root", "");
 
-            PreparedStatement stmt = c.prepareStatement("SELECT * FROM cadastrocliente.funcionario");
+            PreparedStatement stmt = c.prepareStatement("SELECT * FROM gymdatabase.funcionario");
 
             ResultSet rs = stmt.executeQuery();  
 
