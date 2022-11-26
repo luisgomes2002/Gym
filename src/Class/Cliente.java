@@ -5,15 +5,15 @@ public class Cliente
 	private int id;
     private String nome;
     private int tel;
-    private int nascimento;
+    private String nascimento;
     private String email;
     private String endereco;
-    private int cpf;  
+    private int cpf;
     private String sexo;
     private String nacionalidade;
     private String treino;
 
-    public Cliente(int id, String nome, int tel, int nascimento, String email, String endereco, int cpf, String sexo, String nacionalidade, String treino)
+    public Cliente(int id, String nome, int tel, String nascimento, String email, String endereco, int cpf, String sexo, String nacionalidade, String treino)
     {
     	this.id = id;
         this.nome = nome;
@@ -58,11 +58,11 @@ public class Cliente
     {
         this.tel = tel;
     }
-    public int getnascimento()
+    public String getNascimento()
     {
         return nascimento;
     }
-    public void setnascimento(int nascimento)
+    public void setnascimento(String nascimento)
     {
         this.nascimento = nascimento;
     }
@@ -89,16 +89,6 @@ public class Cliente
     public void setCpf(int cpf)
     {
         this.cpf = cpf;
-    }
-
-    public int getNascimento()
-    {
-        return nascimento;
-    }
-
-    public void setNascimento(int nascimento)
-    {
-        this.nascimento = nascimento;
     }
 
     public String getSexo()

@@ -14,7 +14,7 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import javafx.scene.Node;
 
-public class CadastroClienteController extends Dao
+public class CadastroClienteController
 {  
     private Stage stage;
     private Scene scene;
@@ -61,8 +61,8 @@ public class CadastroClienteController extends Dao
              Driver driver = new Driver();
              DriverManager.registerDriver(driver);
 
-             Connection c = DriverManager.getConnection("jdbc:mysql://localhost:3306/cadastrocliente", "root", "");
-             PreparedStatement stmt = c.prepareStatement("INSERT INTO cadastrocliente.cliente (nome, nascimento, cpf, endereco, email, telefone, sexo, nacionalidade, treino) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
+             Connection c = DriverManager.getConnection("jdbc:mysql://localhost:3306/gymdatabase", "root", "");
+             PreparedStatement stmt = c.prepareStatement("INSERT INTO gymdatabase.cliente (nome, nascimento, cpf, endereco, email, telefone, sexo, nascionalidade, tipoDeTreino) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
 
              stmt.setString(1, nomeCliente.getText());
              stmt.setString(2, nascimentoCliente.getText());

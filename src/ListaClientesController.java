@@ -8,9 +8,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ResourceBundle;
 import com.mysql.cj.jdbc.Driver;
-
 import Class.Cliente;
-
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -38,6 +36,30 @@ public class ListaClientesController extends Dao implements Initializable
 
     @FXML
     private TableColumn<Cliente, String> Nome;
+    
+    @FXML
+    private TableColumn<Cliente, Integer> Cpf;
+
+    @FXML
+    private TableColumn<Cliente, String> Email;
+
+    @FXML
+    private TableColumn<Cliente, String> Endereco;
+    
+    @FXML
+    private TableColumn<Cliente, String> Nacionalidade;
+
+    @FXML
+    private TableColumn<Cliente, String> Nascimento;
+    
+    @FXML
+    private TableColumn<Cliente, String> Sexo;
+
+    @FXML
+    private TableColumn<Cliente, Integer> Telefone;
+
+    @FXML
+    private TableColumn<Cliente, String> Treino;
 
     @FXML
     private TableView<Cliente> tableViewClientes;
@@ -54,14 +76,13 @@ public class ListaClientesController extends Dao implements Initializable
     @FXML
     private Button btnVoltar;
 
-    
     public Connection getConnection()
     {
     	Connection c;
     	try
 		{
-			Driver driver =  new Driver();
-			DriverManager.registerDriver(driver);
+			//Driver driver =  new Driver();
+			//DriverManager.registerDriver(driver);
 			
 			c = DriverManager.getConnection("jdbc:mysql://localhost:3306/gymdatabase", "root", "");
 			return c;		
@@ -89,7 +110,7 @@ public class ListaClientesController extends Dao implements Initializable
     		Cliente cliente;
     		while(rs.next())
     		{
-    			cliente = new Cliente(rs.getInt("id"), rs.getString("nome"), rs.getInt("tel"), rs.getInt("nascimento"), rs.getString("email"), rs.getString("endereco"), rs.getInt("cpf"), rs.getString("sexo"), rs.getString("nacionalidade"), rs.getString("treino"));
+    			cliente = new Cliente(rs.getInt("id"), rs.getString("nome"), rs.getInt("telefone"), rs.getString("nascimento"), rs.getString("email"), rs.getString("endereco"), rs.getInt("cpf"), rs.getString("sexo"), rs.getString("nascionalidade"), rs.getString("tipoDeTreino"));
     			clienteList.add(cliente);
     		}
     	}
@@ -106,16 +127,23 @@ public class ListaClientesController extends Dao implements Initializable
     	
     	ID.setCellValueFactory(new PropertyValueFactory<Cliente, Integer>("id"));
     	Nome.setCellValueFactory(new PropertyValueFactory<Cliente, String>("nome"));
+    	Telefone.setCellValueFactory(new PropertyValueFactory<Cliente, Integer>("tel"));
+    	Nascimento.setCellValueFactory(new PropertyValueFactory<Cliente, String>("nascimento"));//converter para integer para testar
+    	Email.setCellValueFactory(new PropertyValueFactory<Cliente, String>("email"));
+    	Endereco.setCellValueFactory(new PropertyValueFactory<Cliente, String>("endereco"));
+    	Cpf.setCellValueFactory(new PropertyValueFactory<Cliente, Integer>("cpf"));
+    	Sexo.setCellValueFactory(new PropertyValueFactory<Cliente, String>("sexo"));
+    	Nacionalidade.setCellValueFactory(new PropertyValueFactory<Cliente, String>("nacionalidade"));
+    	Treino.setCellValueFactory(new PropertyValueFactory<Cliente, String>("treino"));
+    	
+    	tableViewClientes.setItems(list);
     }
     
     @Override
     public void initialize(URL location, ResourceBundle resources) 
     {   	
-    	ObservableList<Cliente> list = getClienteList();
-    	
-    	ID.setCellValueFactory(new PropertyValueFactory<Cliente, Integer>("id"));
-    	Nome.setCellValueFactory(new PropertyValueFactory<Cliente, String>("nome"));
-    	buscarUsuarios();
+    	//buscarUsuarios();
+    	showCliente();
     }
     
     @FXML
