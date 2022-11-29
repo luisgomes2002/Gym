@@ -62,7 +62,7 @@ public class Cliente
     {
         return nascimento;
     }
-    public void setnascimento(String nascimento)
+    public void setNascimento(String nascimento)
     {
         this.nascimento = nascimento;
     }

@@ -25,7 +25,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import javafx.scene.Node;
 
-public class ListaClientesController extends Dao implements Initializable 
+public class ListaClientesController implements Initializable 
 {
     private Stage stage;
     private Scene scene;
@@ -81,9 +81,6 @@ public class ListaClientesController extends Dao implements Initializable
     	Connection c;
     	try
 		{
-			//Driver driver =  new Driver();
-			//DriverManager.registerDriver(driver);
-			
 			c = DriverManager.getConnection("jdbc:mysql://localhost:3306/gymdatabase", "root", "");
 			return c;		
 		}
@@ -110,7 +107,17 @@ public class ListaClientesController extends Dao implements Initializable
     		Cliente cliente;
     		while(rs.next())
     		{
-    			cliente = new Cliente(rs.getInt("id"), rs.getString("nome"), rs.getInt("telefone"), rs.getString("nascimento"), rs.getString("email"), rs.getString("endereco"), rs.getInt("cpf"), rs.getString("sexo"), rs.getString("nascionalidade"), rs.getString("tipoDeTreino"));
+    			cliente = new Cliente(rs.getInt("id"), 
+    					rs.getString("nome"),
+    					rs.getInt("telefone"), 
+    					rs.getString("nascimento"), 
+    					rs.getString("email"), 
+    					rs.getString("endereco"),
+    					rs.getInt("cpf"),
+    					rs.getString("sexo"), 
+    					rs.getString("nascionalidade"), 
+    					rs.getString("tipoDeTreino"));
+    			
     			clienteList.add(cliente);
     		}
     	}
@@ -142,7 +149,6 @@ public class ListaClientesController extends Dao implements Initializable
     @Override
     public void initialize(URL location, ResourceBundle resources) 
     {   	
-    	//buscarUsuarios();
     	showCliente();
     }
     
