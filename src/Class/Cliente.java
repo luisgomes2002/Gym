@@ -27,11 +27,6 @@ public class Cliente
         this.treino = treino;
     }
 
-    public Cliente()
-    {
-
-    }
-
     public int getId()
     {
         return id;

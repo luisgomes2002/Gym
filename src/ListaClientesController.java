@@ -75,6 +75,7 @@ public class ListaClientesController implements Initializable
 
     @FXML
     private Button btnVoltar;
+    
 
     public Connection getConnection()
     {
@@ -105,6 +106,7 @@ public class ListaClientesController implements Initializable
     		stmt = c.createStatement();
     		rs = stmt.executeQuery(query);   
     		Cliente cliente;
+    		
     		while(rs.next())
     		{
     			cliente = new Cliente(rs.getInt("id"), 

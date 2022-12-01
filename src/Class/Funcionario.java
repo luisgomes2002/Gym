@@ -12,9 +12,9 @@ public class Funcionario
     private String sexo;
     private String nacionalidade;
     private String cargo;
-    private float salaro;
+    private String salario;
     
-    public Funcionario(int id, String nome, int tel, String nascimento, String email, String endereco, int cpf, String sexo, String nacionalidade, String cargo, float salario)
+    public Funcionario(int id, String nome, int tel, String nascimento, String email, String endereco, int cpf, String sexo, String nacionalidade, String cargo, String salario)
     {
     	this.id = id;
         this.nome = nome;
@@ -26,7 +26,7 @@ public class Funcionario
         this.sexo = sexo;
         this.nacionalidade = nacionalidade;
         this.cargo = cargo;
-        this.salaro = salario;
+        this.salario = salario;
     }
     
     public int getId()
@@ -129,14 +129,14 @@ public class Funcionario
 		this.cargo = cargo;
 	}
 	
-	public float getSalaro()
+	public String getSalario()
 	{
-		return salaro;
+		return salario;
 	}
 	
-	public void setSalaro(float salaro)
+	public void setSalaro(String salario)
 	{
-		this.salaro = salaro;
+		this.salario = salario;
 	}
 	
 }

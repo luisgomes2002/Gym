@@ -73,12 +73,12 @@
       <TextField fx:id="nacionalidadeFunc" layoutX="412.0" layoutY="375.0" prefHeight="25.0" prefWidth="346.0" />
       <TextField fx:id="CargoFuncionario" layoutX="412.0" layoutY="425.0" prefHeight="25.0" prefWidth="346.0" />
       <TextField fx:id="salarioFuncionario" layoutX="412.0" layoutY="475.0" prefHeight="25.0" prefWidth="346.0" />
-      <Label layoutX="280.0" layoutY="425.0" text="Cargo" textFill="WHITE">
+      <Label layoutX="280.0" layoutY="425.0" text="Cargo*" textFill="WHITE">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="280.0" layoutY="475.0" text="Salario" textFill="WHITE">
+      <Label layoutX="280.0" layoutY="475.0" text="Salario*" textFill="WHITE">
          <font>
             <Font size="18.0" />
          </font>

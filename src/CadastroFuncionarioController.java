@@ -65,7 +65,7 @@ public class CadastroFuncionarioController
             DriverManager.registerDriver(driver);
 
             Connection c = DriverManager.getConnection("jdbc:mysql://localhost:3306/gymdatabase", "root", "");
-            PreparedStatement stmt = c.prepareStatement("INSERT INTO gymdatabase.funcionario (nome, nascimento, cpf, endereco, email, telefone, sexo, nacionalidade, cargo, salario) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+            PreparedStatement stmt = c.prepareStatement("INSERT INTO gymdatabase.funcionario (nome, nascimento, cpf, endereco, email, telefone, sexo, nascionalidade, cargo, salario) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 
             stmt.setString(1, nomeFunci.getText());
             stmt.setString(2, nascimentoFunci.getText());
@@ -78,7 +78,16 @@ public class CadastroFuncionarioController
             stmt.setString(9, CargoFuncionario.getText());
             stmt.setString(10, salarioFuncionario.getText());
 
-            stmt.executeUpdate();
+            int rowsAffected = stmt.executeUpdate();
+            
+            if(rowsAffected > 0) 
+            {
+           	 System.out.println("Usuario codastrado em!!!");
+            }
+            else
+            {
+           	 System.out.println("Foi n em!!!");
+            }
             
             nomeFunci.setText("");
             nascimentoFunci.setText("");
@@ -92,8 +101,9 @@ public class CadastroFuncionarioController
             salarioFuncionario.setText("");
         
         }
-        catch(SQLException ex)
+        catch(SQLException e)
         {
+        	e.printStackTrace();
             System.out.println("Erro na conexao com o banco de dados");
         }
     }

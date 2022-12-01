@@ -25,11 +25,23 @@
           <RowConstraints maxHeight="403.0" minHeight="10.0" prefHeight="403.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <TableView prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
+            <TableView fx:id="tableViewFuncionarios" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
               <columns>
-                <TableColumn prefWidth="75.0" text="C1" />
-                <TableColumn prefWidth="75.0" text="C2" />
+                <TableColumn fx:id="ID" prefWidth="47.0" text="ID" />
+                <TableColumn fx:id="nome" prefWidth="66.0" text="NOME" />
+                  <TableColumn fx:id="telefone" prefWidth="112.0" text="TELEFONE" />
+                  <TableColumn fx:id="nascimento" prefWidth="75.0" text="NASCIMENTO" />
+                  <TableColumn fx:id="email" prefWidth="75.0" text="EMAIL" />
+                  <TableColumn fx:id="endereco" prefWidth="75.0" text="ENDERECO" />
+                  <TableColumn fx:id="cpf" prefWidth="75.0" text="CPF" />
+                  <TableColumn fx:id="sexo" prefWidth="75.0" text="SEXO" />
+                  <TableColumn fx:id="nacionalidade" prefWidth="75.0" text="NACIONALIDADE" />
+                  <TableColumn fx:id="cargo" prefWidth="75.0" text="CARGO" />
+                  <TableColumn fx:id="salario" prefWidth="75.0" text="SALARIO" />
               </columns>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
             </TableView>
             <HBox prefHeight="100.0" prefWidth="200.0">
                <children>
