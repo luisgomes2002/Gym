@@ -8,9 +8,6 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ResourceBundle;
 import com.mysql.cj.jdbc.Driver;
-
-import Class.Cliente;
-import Class.Funcionario;
 import Class.Funcionario;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -18,6 +15,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -26,7 +24,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
-import javafx.scene.Node;
+
 
 public class ListaFuncionarioController implements Initializable
 {
@@ -35,41 +33,41 @@ public class ListaFuncionarioController implements Initializable
     private Parent root;
 
     @FXML
+    private TableColumn<Funcionario, String> Cargo;
+
+    @FXML
+    private TableColumn<Funcionario, Integer> Cpf;
+
+    @FXML
+    private TableColumn<Funcionario, String> Email;
+
+    @FXML
+    private TableColumn<Funcionario, String> Endereco;
+
+    @FXML
     private TableColumn<Funcionario, Integer> ID;
+
+    @FXML
+    private TableColumn<Funcionario, String> Nacionalidade;
+
+    @FXML
+    private TableColumn<Funcionario, String> Nascimento;
+
+    @FXML
+    private TableColumn<Funcionario, String> Nome;
+
+    @FXML
+    private TableColumn<Funcionario, String> Salario;
+
+    @FXML
+    private TableColumn<Funcionario, String> Sexo;
+
+    @FXML
+    private TableColumn<Funcionario, Integer> Telefone;
     
     @FXML
-    private TableColumn<Funcionario, String> cargo;
+    private TableView<Funcionario> tableViewFuncionarios;
 
-    @FXML
-    private TableColumn<Funcionario, Integer> cpf;
-
-    @FXML
-    private TableColumn<Funcionario, String> email;
-
-    @FXML
-    private TableColumn<Funcionario, String> endereco;
-
-    @FXML
-    private TableColumn<Funcionario, String> nacionalidade;
-
-    @FXML
-    private TableColumn<Funcionario, String> nascimento;
-
-    @FXML
-    private TableColumn<Funcionario, String> nome;
-
-    @FXML
-    private TableColumn<Funcionario, String> salario;
-
-    @FXML
-    private TableColumn<Funcionario, String> sexo;
-
-    @FXML
-    private TableColumn<Funcionario, Integer> telefone;
-    
-    @FXML
-    private TableView<Funcionario> tableViewFuincionarios;
-    
     @FXML
     private TextField barraDePesquisa;
 
@@ -142,18 +140,18 @@ public class ListaFuncionarioController implements Initializable
 		ObservableList<Funcionario> list = getFuncionarioList();
 	
 		ID.setCellValueFactory(new PropertyValueFactory<Funcionario, Integer>("id"));
-		nome.setCellValueFactory(new PropertyValueFactory<Funcionario, String>("nome"));
-		telefone.setCellValueFactory(new PropertyValueFactory<Funcionario, Integer>("tel"));
-		nascimento.setCellValueFactory(new PropertyValueFactory<Funcionario, String>("nascimento"));
-		email.setCellValueFactory(new PropertyValueFactory<Funcionario, String>("email"));
-		endereco.setCellValueFactory(new PropertyValueFactory<Funcionario, String>("endereco"));
-		cpf.setCellValueFactory(new PropertyValueFactory<Funcionario, Integer>("cpf"));
-		sexo.setCellValueFactory(new PropertyValueFactory<Funcionario, String>("sexo"));
-		nacionalidade.setCellValueFactory(new PropertyValueFactory<Funcionario, String>("nacionalidade"));
-		cargo.setCellValueFactory(new PropertyValueFactory<Funcionario, String>("cargo"));
-		salario.setCellValueFactory(new PropertyValueFactory<Funcionario, String>("salario"));
+		Nome.setCellValueFactory(new PropertyValueFactory<Funcionario, String>("nome"));
+		Telefone.setCellValueFactory(new PropertyValueFactory<Funcionario, Integer>("tel"));
+		Nascimento.setCellValueFactory(new PropertyValueFactory<Funcionario, String>("nascimento"));
+		Email.setCellValueFactory(new PropertyValueFactory<Funcionario, String>("email"));
+		Endereco.setCellValueFactory(new PropertyValueFactory<Funcionario, String>("endereco"));
+		Cpf.setCellValueFactory(new PropertyValueFactory<Funcionario, Integer>("cpf"));
+		Sexo.setCellValueFactory(new PropertyValueFactory<Funcionario, String>("sexo"));
+		Nacionalidade.setCellValueFactory(new PropertyValueFactory<Funcionario, String>("nacionalidade"));
+		Cargo.setCellValueFactory(new PropertyValueFactory<Funcionario, String>("cargo"));
+		Salario.setCellValueFactory(new PropertyValueFactory<Funcionario, String>("salario"));
 		
-		tableViewFuincionarios.setItems(list);
+		tableViewFuncionarios.setItems(list);
     }
     
     @Override
@@ -171,7 +169,21 @@ public class ListaFuncionarioController implements Initializable
     @FXML
     void pesquisarFuncionario(ActionEvent event)
     {
+    	try
+        {
+            Driver driver = new Driver();
+            DriverManager.registerDriver(driver);
+
+            Connection c = DriverManager.getConnection("jdbc:mysql://localhost:3306/gymdatabase", "root", "");
+            PreparedStatement stmt = c.prepareStatement("UPDATE gymdatabase.cliente SET endereco = ?, email = ?, telefone = ? WHERE id = ?");
+            
+            
         
+        }
+        catch(SQLException ex)
+        {
+            System.out.println("Erro na conexao com o banco de dados");
+        }
     }
 
     @FXML
