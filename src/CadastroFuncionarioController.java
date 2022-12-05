@@ -65,7 +65,15 @@ public class CadastroFuncionarioController
             DriverManager.registerDriver(driver);
 
             Connection c = DriverManager.getConnection("jdbc:mysql://localhost:3306/gymdatabase", "root", "");
-            PreparedStatement stmt = c.prepareStatement("INSERT INTO gymdatabase.funcionario (nome, nascimento, cpf, endereco, email, telefone, sexo, nascionalidade, cargo, salario) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+            PreparedStatement stmt = c.prepareStatement("INSERT INTO gymdatabase.funcionario (nome,"
+            		+ " nascimento, "
+            		+ "cpf, "
+            		+ "endereco, "
+            		+ "email, telefone, "
+            		+ "sexo, "
+            		+ "nascionalidade, "
+            		+ "cargo, "
+            		+ "salario) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 
             stmt.setString(1, nomeFunci.getText());
             stmt.setString(2, nascimentoFunci.getText());
@@ -113,7 +121,7 @@ public class CadastroFuncionarioController
     {
         root = FXMLLoader.load(getClass().getResource("interface/GymApp.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root, 984, 566);
+        scene = new Scene(root, 1280, 720);
         stage.setScene(scene);
         stage.show();
     }

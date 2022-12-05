@@ -2,12 +2,10 @@ import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ResourceBundle;
-import com.mysql.cj.jdbc.Driver;
 import Class.Cliente;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -75,6 +73,21 @@ public class ListaClientesController implements Initializable
 
     @FXML
     private Button btnVoltar;
+    
+    @FXML
+    private Button bntEditarCliente;
+    
+    @FXML
+    private TextField emailEdit;
+
+    @FXML
+    private TextField enderecoEdit;
+    
+    @FXML
+    private TextField telEdit;
+
+    @FXML
+    private TextField treinoEdit;
     
 
     public Connection getConnection()
@@ -163,29 +176,17 @@ public class ListaClientesController implements Initializable
     @FXML
     void pesquisarCliente(ActionEvent event)
     {
-    	try
-        {
-            Driver driver = new Driver();
-            DriverManager.registerDriver(driver);
-
-            Connection c = DriverManager.getConnection("jdbc:mysql://localhost:3306/gymdatabase", "root", "");
-            PreparedStatement stmt = c.prepareStatement("UPDATE gymdatabase.cliente SET endereco = ?, email = ?, telefone = ?,tipoDeTreino = ? WHERE id = ?");
-            
-            
-        
-        }
-        catch(SQLException ex)
-        {
-            System.out.println("Erro na conexao com o banco de dados");
-        }
+    	
     }
+    
+    
 
     @FXML
     void swichToGymApp(ActionEvent event) throws IOException
     {
         root = FXMLLoader.load(getClass().getResource("interface/GymApp.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root, 984, 566);
+        scene = new Scene(root, 1280, 720);
         stage.setScene(scene);
         stage.show();
     }

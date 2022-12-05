@@ -2,12 +2,10 @@ import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ResourceBundle;
-import com.mysql.cj.jdbc.Driver;
 import Class.Funcionario;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -149,7 +147,7 @@ public class ListaFuncionarioController implements Initializable
 		Sexo.setCellValueFactory(new PropertyValueFactory<Funcionario, String>("sexo"));
 		Nacionalidade.setCellValueFactory(new PropertyValueFactory<Funcionario, String>("nacionalidade"));
 		Cargo.setCellValueFactory(new PropertyValueFactory<Funcionario, String>("cargo"));
-		Salario.setCellValueFactory(new PropertyValueFactory<Funcionario, String>("salario"));
+		Salario.setCellValueFactory(new PropertyValueFactory<Funcionario, String>("salario"));//float mudar
 		
 		tableViewFuncionarios.setItems(list);
     }
@@ -169,21 +167,7 @@ public class ListaFuncionarioController implements Initializable
     @FXML
     void pesquisarFuncionario(ActionEvent event)
     {
-    	try
-        {
-            Driver driver = new Driver();
-            DriverManager.registerDriver(driver);
-
-            Connection c = DriverManager.getConnection("jdbc:mysql://localhost:3306/gymdatabase", "root", "");
-            PreparedStatement stmt = c.prepareStatement("UPDATE gymdatabase.cliente SET endereco = ?, email = ?, telefone = ? WHERE id = ?");
-            
-            
-        
-        }
-        catch(SQLException ex)
-        {
-            System.out.println("Erro na conexao com o banco de dados");
-        }
+    	
     }
 
     @FXML
@@ -191,7 +175,7 @@ public class ListaFuncionarioController implements Initializable
     {
         root = FXMLLoader.load(getClass().getResource("interface/GymApp.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root, 984, 566);
+        scene = new Scene(root, 1280, 720);
         stage.setScene(scene);
         stage.show();
     }
