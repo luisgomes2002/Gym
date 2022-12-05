@@ -94,6 +94,12 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <Button fx:id="bntEditarCliente" layoutX="406.0" layoutY="194.0" mnemonicParsing="false" prefHeight="15.0" prefWidth="129.0" style="-fx-background-color: #202435;" text="Editar" textFill="WHITE" />
+      <Button fx:id="bntEditarCliente" layoutX="406.0" layoutY="194.0" mnemonicParsing="false" onAction="#editarCliente" prefHeight="15.0" prefWidth="129.0" style="-fx-background-color: #202435;" text="Editar" textFill="WHITE" />
+      <TextField fx:id="idEdit" layoutX="624.0" layoutY="50.0" promptText="ID" />
+      <Label layoutX="630.0" layoutY="14.0" text="Nome Do Cliente" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

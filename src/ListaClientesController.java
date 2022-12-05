@@ -2,10 +2,14 @@ import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ResourceBundle;
+
+import com.mysql.cj.jdbc.Driver;
+
 import Class.Cliente;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -89,7 +93,11 @@ public class ListaClientesController implements Initializable
     @FXML
     private TextField treinoEdit;
     
+    @FXML
+    private TextField idEdit;
 
+    
+    
     public Connection getConnection()
     {
     	Connection c;
@@ -170,16 +178,81 @@ public class ListaClientesController implements Initializable
     @FXML
     void excluirCliente(ActionEvent event)
     {
-    	
+    	String query = "DELETE FROM cliente WHERE id = " + barraDePesquisa.getText() + "";
+    	executeQuery(query);
+    	showCliente();
     }
     
+    private void executeQuery(String query)
+    {
+		Connection c = getConnection();
+		Statement st;
+		try
+		{
+			st = c.createStatement();
+			st.executeUpdate(query);
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+	}
+    
     @FXML
+    void editarCliente(ActionEvent event)
+    {
+    	/*String query = "UPDATE cliente SET telefone = " + telEdit.getText() + "WHERE id = " + nomeEdit.getText() + "";
+    	executeQuery(query);
+    	showCliente();*/
+    	try
+    	{
+    		Driver driver = new Driver();
+    		DriverManager.registerDriver(driver);
+    		
+    		Connection c = DriverManager.getConnection("jdbc:mysql://localhost:3306/gymdatabase", "root", "");
+    		
+    		PreparedStatement stmt = c.prepareStatement("UPDATE gymdatabase.cliente SET telefone = ?, email = ?, endereco = ?, tipoDeTreino = ? WHERE id = ?");
+    		
+    		stmt.setString(1, telEdit.getText());//番号　do krl
+    		stmt.setString(2, emailEdit.getText());
+    		stmt.setString(3, enderecoEdit.getText());
+    		stmt.setString(4, treinoEdit.getText());//sa porra esta pedindo o treino e o numero 
+    		stmt.setString(5, idEdit.getText());
+    		
+    		int rowsAffected = stmt.executeUpdate();
+    		
+    		if(rowsAffected > 0)
+    		{
+    			System.out.println("Mudou");
+    		}
+    		else
+    		{
+    			System.out.println("AAAAAAAAAAA");
+    		}
+    		
+    		showCliente();
+    		
+    	}
+    	catch(SQLException e)
+    	{
+    		e.printStackTrace();
+    	}
+    }
+    
+    /*@FXML
+    void mouseClicked(MouseEvent event)
+    {
+    	Cliente cliente = tableViewClientes.getSelectionModel().getSelectedItem();
+    	System.out.println("id" + cliente.getId());
+    	System.out.println("nome" + cliente.getNome());
+    }*/
+    
+	@FXML
     void pesquisarCliente(ActionEvent event)
     {
     	
     }
-    
-    
+
 
     @FXML
     void swichToGymApp(ActionEvent event) throws IOException
