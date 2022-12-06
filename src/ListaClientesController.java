@@ -7,9 +7,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ResourceBundle;
-
 import com.mysql.cj.jdbc.Driver;
-
 import Class.Cliente;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -96,7 +94,6 @@ public class ListaClientesController implements Initializable
     @FXML
     private TextField idEdit;
 
-    
     
     public Connection getConnection()
     {
@@ -259,7 +256,7 @@ public class ListaClientesController implements Initializable
     {
         root = FXMLLoader.load(getClass().getResource("interface/GymApp.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root, 1280, 720);
+        scene = new Scene(root,  984, 566);
         stage.setScene(scene);
         stage.show();
     }

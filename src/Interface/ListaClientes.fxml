@@ -21,8 +21,8 @@
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
         </columnConstraints>
         <rowConstraints>
-          <RowConstraints maxHeight="235.0" minHeight="10.0" prefHeight="78.0" vgrow="SOMETIMES" />
-          <RowConstraints maxHeight="489.0" minHeight="10.0" prefHeight="429.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="235.0" minHeight="10.0" prefHeight="77.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="403.0" minHeight="10.0" prefHeight="403.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
             <HBox prefHeight="78.0" prefWidth="842.0">
@@ -94,9 +94,9 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <Button fx:id="bntEditarCliente" layoutX="406.0" layoutY="194.0" mnemonicParsing="false" onAction="#editarCliente" prefHeight="15.0" prefWidth="129.0" style="-fx-background-color: #202435;" text="Editar" textFill="WHITE" />
+      <Button fx:id="bntEditarCliente" layoutX="635.0" layoutY="86.0" mnemonicParsing="false" onAction="#editarCliente" prefHeight="15.0" prefWidth="129.0" style="-fx-background-color: #202435;" text="Editar" textFill="WHITE" />
       <TextField fx:id="idEdit" layoutX="624.0" layoutY="50.0" promptText="ID" />
-      <Label layoutX="630.0" layoutY="14.0" text="Nome Do Cliente" textFill="WHITE">
+      <Label layoutX="647.0" layoutY="14.0" text="ID do Cliente" textFill="WHITE">
          <font>
             <Font size="18.0" />
          </font>
