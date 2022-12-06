@@ -58,61 +58,61 @@ public class CadastroClienteController
     {       
     	 try
          {
-             Driver driver = new Driver();
-             DriverManager.registerDriver(driver);
+            Driver driver = new Driver();
+            DriverManager.registerDriver(driver);
 
-             Connection c = DriverManager.getConnection("jdbc:mysql://localhost:3306/gymdatabase", "root", "");
-             PreparedStatement stmt = c.prepareStatement("INSERT INTO gymdatabase.cliente (nome, "
-             		+ "nascimento, "
-             		+ "cpf, "
-             		+ "endereco,"
-             		+ "email, "
-             		+ "telefone, "
-             		+ "sexo, "
-             		+ "nascionalidade, "
-             		+ "tipoDeTreino) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
+            Connection c = DriverManager.getConnection("jdbc:mysql://localhost:3306/gymdatabase", "root", "");
+            PreparedStatement stmt = c.prepareStatement("INSERT INTO gymdatabase.cliente (nome, "
+                + "nascimento, "
+                + "cpf, "
+                + "endereco,"
+                + "email, "
+                + "telefone, "
+                + "sexo, "
+                + "nascionalidade, "
+                + "tipoDeTreino) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
 
-             stmt.setString(1, nomeCliente.getText());
-             stmt.setString(2, nascimentoCliente.getText());
-             stmt.setString(3, cpfCliente.getText());
-             stmt.setString(4, enderecoCliente.getText());
-             stmt.setString(5, emailCliente.getText());
-             stmt.setString(6, telefCliente.getText());
-             stmt.setString(7, sexoCliente.getText());
-             stmt.setString(8, nacionalidadeCliente.getText());
-             stmt.setString(9, tipoTreinoCliente.getText());
-             
-             int rowsAffected = stmt.executeUpdate();
-             
-             if(rowsAffected > 0) 
-             {
-            	 System.out.println("Usuario codastrado em!!!");
-             }
-             else
-             {
-            	 System.out.println("Foi n em!!!");
-             }
-             
-             nomeCliente.setText("");
-             nascimentoCliente.setText("");
-             cpfCliente.setText("");
-             enderecoCliente.setText("");
-             emailCliente.setText("");
-             telefCliente.setText("");
-             sexoCliente.setText("");
-             nacionalidadeCliente.setText("");
-             tipoTreinoCliente.setText("");
-         
-         }
-         catch(SQLException e)
-         {
-        	 e.printStackTrace();
-             System.out.println("Erro na conexao com o banco de dados");
-         }
+            stmt.setString(1, nomeCliente.getText());
+            stmt.setString(2, nascimentoCliente.getText());
+            stmt.setString(3, cpfCliente.getText());
+            stmt.setString(4, enderecoCliente.getText());
+            stmt.setString(5, emailCliente.getText());
+            stmt.setString(6, telefCliente.getText());
+            stmt.setString(7, sexoCliente.getText());
+            stmt.setString(8, nacionalidadeCliente.getText());
+            stmt.setString(9, tipoTreinoCliente.getText());
+            
+            int rowsAffected = stmt.executeUpdate();
+            
+            if(rowsAffected > 0) 
+            {
+                System.out.println("Usuario codastrado em!!!");
+            }
+            else
+            {
+                System.out.println("Foi n em!!!");
+            }
+            
+            nomeCliente.setText("");
+            nascimentoCliente.setText("");
+            cpfCliente.setText("");
+            enderecoCliente.setText("");
+            emailCliente.setText("");
+            telefCliente.setText("");
+            sexoCliente.setText("");
+            nacionalidadeCliente.setText("");
+            tipoTreinoCliente.setText("");
         
+        }
+        catch(SQLException e)
+        {
+            e.printStackTrace();
+            System.out.println("Erro na conexao com o banco de dados");
+        }
     }
 
-    public void swichToGymApp(ActionEvent event) throws IOException
+    @FXML
+    void swichToGymApp(ActionEvent event) throws IOException
     {
         root = FXMLLoader.load(getClass().getResource("interface/GymApp.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -120,5 +120,4 @@ public class CadastroClienteController
         stage.setScene(scene);
         stage.show();
     }
-
 }
