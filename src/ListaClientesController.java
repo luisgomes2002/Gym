@@ -87,9 +87,6 @@ public class ListaClientesController implements Initializable
     
     @FXML
     private TextField telEdit;
-
-    @FXML
-    private TextField treinoEdit;
     
     @FXML
     private TextField idEdit;
@@ -128,15 +125,19 @@ public class ListaClientesController implements Initializable
     		while(rs.next())
     		{
     			cliente = new Cliente(rs.getInt("id"), 
-    					rs.getString("nome"),
-    					rs.getInt("telefone"), 
-    					rs.getString("nascimento"), 
-    					rs.getString("email"), 
-    					rs.getString("endereco"),
-    					rs.getInt("cpf"),
-    					rs.getString("sexo"), 
-    					rs.getString("nascionalidade"), 
-    					rs.getString("tipoDeTreino"));
+					rs.getString("nome"),
+					rs.getInt("telefone"), 
+					rs.getString("nascimento"), 
+					rs.getString("email"), 
+					rs.getString("endereco"),
+					rs.getInt("cpf"),
+					rs.getString("sexo"), 
+					rs.getString("nascionalidade"), 
+					rs.getString("tipoDeTreino"),
+					rs.getString("peso"), 
+            		rs.getString("altura"),
+                	rs.getString("foco"), 
+                	rs.getString("imc"));
     			
     			clienteList.add(cliente);
     		}
@@ -172,15 +173,7 @@ public class ListaClientesController implements Initializable
     	showCliente();
     }
     
-    @FXML
-    void excluirCliente(ActionEvent event)
-    {
-    	String query = "DELETE FROM cliente WHERE id = " + barraDePesquisa.getText() + "";
-    	executeQuery(query);
-    	showCliente();
-    }
-    
-    private void executeQuery(String query)
+	private void executeQuery(String query)//para poder deletar
     {
 		Connection c = getConnection();
 		Statement st;
@@ -194,6 +187,14 @@ public class ListaClientesController implements Initializable
 			e.printStackTrace();
 		}
 	}
+
+    @FXML
+    void excluirCliente(ActionEvent event)
+    {
+    	String query = "DELETE FROM cliente WHERE id = " + barraDePesquisa.getText() + "";
+    	executeQuery(query);
+    	showCliente();
+    }
     
     @FXML
     void editarCliente(ActionEvent event)
@@ -208,13 +209,12 @@ public class ListaClientesController implements Initializable
     		
     		Connection c = DriverManager.getConnection("jdbc:mysql://localhost:3306/gymdatabase", "root", "");
     		
-    		PreparedStatement stmt = c.prepareStatement("UPDATE gymdatabase.cliente SET telefone = ?, email = ?, endereco = ?, tipoDeTreino = ? WHERE id = ?");
+    		PreparedStatement stmt = c.prepareStatement("UPDATE gymdatabase.cliente SET telefone = ?, email = ?, endereco = ? WHERE id = ?");
     		
     		stmt.setString(1, telEdit.getText());//番号　do krl
     		stmt.setString(2, emailEdit.getText());
     		stmt.setString(3, enderecoEdit.getText());
-    		stmt.setString(4, treinoEdit.getText());//sa porra esta pedindo o treino e o numero 
-    		stmt.setString(5, idEdit.getText());
+    		stmt.setString(4, idEdit.getText());
     		
     		int rowsAffected = stmt.executeUpdate();
     		
@@ -228,6 +228,11 @@ public class ListaClientesController implements Initializable
     		}
     		
     		showCliente();
+
+			telEdit.setText("");
+            emailEdit.setText("");
+            enderecoEdit.setText("");
+            idEdit.setText("");
     		
     	}
     	catch(SQLException e)

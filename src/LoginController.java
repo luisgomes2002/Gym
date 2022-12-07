@@ -41,7 +41,7 @@ public class LoginController
     private void logar(ActionEvent event) throws IOException
     {
         try
-        { 
+        {
             Driver driver = new Driver();
             DriverManager.registerDriver(driver);
             
@@ -61,7 +61,7 @@ public class LoginController
             ResultSet rs = stmt.executeQuery();
             
             if(rs.next())
-            {   
+            {
                 root = FXMLLoader.load(getClass().getResource("interface/GymApp.fxml"));
                 stage = (Stage)((Node)event.getSource()).getScene().getWindow();
                 scene = new Scene(root, 984, 566);

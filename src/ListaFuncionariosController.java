@@ -98,7 +98,6 @@ public class ListaFuncionariosController implements Initializable
     @FXML
     private TextField telEdit;
 
-    
     public Connection getConnection()
     {
     	Connection c;

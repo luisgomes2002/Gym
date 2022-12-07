@@ -66,14 +66,14 @@ public class CadastroFuncionarioController
 
             Connection c = DriverManager.getConnection("jdbc:mysql://localhost:3306/gymdatabase", "root", "");
             PreparedStatement stmt = c.prepareStatement("INSERT INTO gymdatabase.funcionario (nome,"
-            		+ " nascimento, "
-            		+ "cpf, "
-            		+ "endereco, "
-            		+ "email, telefone, "
-            		+ "sexo, "
-            		+ "nascionalidade, "
-            		+ "cargo, "
-            		+ "salario) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+                + " nascimento, "
+                + "cpf, "
+                + "endereco, "
+                + "email, telefone, "
+                + "sexo, "
+                + "nascionalidade, "
+                + "cargo, "
+                + "salario) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 
             stmt.setString(1, nomeFunci.getText());
             stmt.setString(2, nascimentoFunci.getText());

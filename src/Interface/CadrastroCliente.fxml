@@ -72,12 +72,6 @@
       </Label>
       <TextField fx:id="sexoCliente" layoutX="411.0" layoutY="500.0" prefHeight="25.0" prefWidth="642.0" AnchorPane.rightAnchor="227.0" />
       <TextField fx:id="nacionalidadeCliente" layoutX="412.0" layoutY="550.0" prefHeight="25.0" prefWidth="642.0" />
-      <TextField fx:id="tipoTreinoCliente" layoutX="412.0" layoutY="600.0" prefHeight="25.0" prefWidth="642.0" />
-      <Label layoutX="280.0" layoutY="600.0" text="Tipo do Treino*" textFill="WHITE">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-      <Button fx:id="btnCadastrar" layoutX="671.0" layoutY="647.0" mnemonicParsing="false" onAction="#fazerCadastroCliente" prefHeight="36.0" prefWidth="122.0" style="-fx-background-color: #202435;" text="Cadastrar" textFill="WHITE" />
+      <Button fx:id="btnCadastrar" layoutX="672.0" layoutY="618.0" mnemonicParsing="false" onAction="#fazerCadastroCliente" prefHeight="36.0" prefWidth="122.0" style="-fx-background-color: #202435;" text="Cadastrar" textFill="WHITE" />
    </children>
 </AnchorPane>

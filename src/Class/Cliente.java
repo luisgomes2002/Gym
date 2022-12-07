@@ -12,8 +12,12 @@ public class Cliente
     private String sexo;
     private String nacionalidade;
     private String treino;
+    public String peso;
+    public String altura;   
+    private String foco;
+    private String imc;
 
-    public Cliente(int id, String nome, int tel, String nascimento, String email, String endereco, int cpf, String sexo, String nacionalidade, String treino)
+    public Cliente(int id, String nome, int tel, String nascimento, String email, String endereco, int cpf, String sexo, String nacionalidade, String treino, String peso, String altura, String foco, String imc)
     {
     	this.id = id;
         this.nome = nome;
@@ -25,6 +29,10 @@ public class Cliente
         this.sexo = sexo;
         this.nacionalidade = nacionalidade;
         this.treino = treino;
+        this.peso = peso;
+        this.altura = altura;
+        this.foco = foco;
+        this.imc = imc;
     }
 
     public int getId()
@@ -114,6 +122,46 @@ public class Cliente
     public void setTreino(String treino)
     {
         this.treino = treino;
+    }
+
+    public String getPeso()
+    {
+        return peso;
+    }
+
+    public void setPeso(String peso)
+    {
+        this.peso = peso;
+    }
+
+    public String getAltura()
+    {
+        return altura;
+    }
+
+    public void setAltura(String altura)
+    {
+        this.altura = altura;
+    }
+
+    public String getFoco()
+    {
+        return foco;
+    }
+
+    public void setFoco(String foco)
+    {
+        this.foco = foco;
+    }
+
+    public String getImc()
+    {
+        return imc;
+    }
+
+    public void setImc(String imc)
+    {
+        this.imc = imc;
     }
 
 }

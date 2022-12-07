@@ -56,8 +56,8 @@ public class CadastroClienteController
     @FXML
     void fazerCadastroCliente(ActionEvent event) throws SQLException
     {       
-    	 try
-         {
+    	try
+        {
             Driver driver = new Driver();
             DriverManager.registerDriver(driver);
 
@@ -69,8 +69,7 @@ public class CadastroClienteController
                 + "email, "
                 + "telefone, "
                 + "sexo, "
-                + "nascionalidade, "
-                + "tipoDeTreino) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
+                + "nascionalidade) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
 
             stmt.setString(1, nomeCliente.getText());
             stmt.setString(2, nascimentoCliente.getText());
@@ -80,7 +79,6 @@ public class CadastroClienteController
             stmt.setString(6, telefCliente.getText());
             stmt.setString(7, sexoCliente.getText());
             stmt.setString(8, nacionalidadeCliente.getText());
-            stmt.setString(9, tipoTreinoCliente.getText());
             
             int rowsAffected = stmt.executeUpdate();
             
