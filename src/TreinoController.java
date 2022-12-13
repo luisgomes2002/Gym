@@ -114,7 +114,7 @@ public class TreinoController implements Initializable
                 rs.getString("endereco"),
                 rs.getInt("cpf"),
                 rs.getString("sexo"), 
-                rs.getString("nascionalidade"), 
+                rs.getString("nacionalidade"), 
                 rs.getString("tipoDeTreino"),
                 rs.getString("peso"), 
                 rs.getString("altura"),

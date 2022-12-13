@@ -13,9 +13,11 @@ public class Funcionario
     private String nacionalidade;
     private String cargo;
     private String salario;
-    
+	private String login;
+    private String senha;
+
 	public Funcionario(int id, String nome, int tel, String nascimento, String email, String endereco, int cpf,
-	String sexo, String nacionalidade, String cargo, String salario)
+	String sexo, String nacionalidade, String cargo, String salario, String login, String senha)
 	{
 		this.id = id;
 		this.nome = nome;
@@ -28,6 +30,8 @@ public class Funcionario
 		this.nacionalidade = nacionalidade;
 		this.cargo = cargo;
 		this.salario = salario;
+		this.login = login;
+		this.senha = senha;
 	}
 
 	public int getId()
@@ -140,6 +144,25 @@ public class Funcionario
 		this.salario = salario;
 	}
     
+	public String getLogin()
+	{
+		return login;
+	}
+
+	public void setLogin(String login)
+	{
+		this.login = login;
+	}
+
+	public String getSenha()
+	{
+		return senha;
+	}
+
+	public void setSenha(String senha)
+	{
+		this.senha = senha;
+	}
 	
 }
     

@@ -67,6 +67,12 @@ public class ListaFuncionariosController implements Initializable
     
     @FXML
     private TableView<Funcionario> tableViewFuncionarios;
+    
+    @FXML
+    private TableColumn<Funcionario, String> login;
+
+    @FXML
+    private TableColumn<Funcionario, String> senha;
 
     @FXML
     private Button bntDeExcluir;
@@ -123,7 +129,7 @@ public class ListaFuncionariosController implements Initializable
     		Funcionario funcionario;
     		
     		while(rs.next())
-    		{
+    		{//com o bd
     			funcionario = new Funcionario(rs.getInt("id"), 
                 rs.getString("nome"),
                 rs.getInt("telefone"), 
@@ -132,9 +138,11 @@ public class ListaFuncionariosController implements Initializable
                 rs.getString("endereco"),
                 rs.getInt("cpf"),
                 rs.getString("sexo"), 
-                rs.getString("nascionalidade"), 
+                rs.getString("nacionalidade"), 
                 rs.getString("cargo"),
-                rs.getString("salario"));
+                rs.getString("salario"),
+                rs.getString("nome_usuario"),
+                rs.getString("senha_usuario"));
     			
     			funcionarioList.add(funcionario);
     		}
@@ -149,7 +157,7 @@ public class ListaFuncionariosController implements Initializable
     public void showFuncionario()
     {
         ObservableList<Funcionario> list = getFuncionarioList();
-
+        //com a class
         ID.setCellValueFactory(new PropertyValueFactory<Funcionario, Integer>("id"));
         Nome.setCellValueFactory(new PropertyValueFactory<Funcionario, String>("nome"));
         Telefone.setCellValueFactory(new PropertyValueFactory<Funcionario, Integer>("tel"));
@@ -161,6 +169,8 @@ public class ListaFuncionariosController implements Initializable
         Nacionalidade.setCellValueFactory(new PropertyValueFactory<Funcionario, String>("nacionalidade"));
         Cargo.setCellValueFactory(new PropertyValueFactory<Funcionario, String>("cargo"));
         Salario.setCellValueFactory(new PropertyValueFactory<Funcionario, String>("salario"));//float mudar
+        login.setCellValueFactory(new PropertyValueFactory<Funcionario, String>("login"));
+        senha.setCellValueFactory(new PropertyValueFactory<Funcionario, String>("senha"));
         
         tableViewFuncionarios.setItems(list);
     }

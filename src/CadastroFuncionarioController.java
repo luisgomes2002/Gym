@@ -57,6 +57,13 @@ public class CadastroFuncionarioController
     private TextField telefFunc;
 
     @FXML
+    private TextField loginFuncionario;
+
+    @FXML
+    private TextField senhaFuncionario;
+
+
+    @FXML
     void fazerCadastroFuncionario(ActionEvent event)
     {
         try
@@ -66,14 +73,17 @@ public class CadastroFuncionarioController
 
             Connection c = DriverManager.getConnection("jdbc:mysql://localhost:3306/gymdatabase", "root", "");
             PreparedStatement stmt = c.prepareStatement("INSERT INTO gymdatabase.funcionario (nome,"
-                + " nascimento, "
+                + "nascimento, "
                 + "cpf, "
                 + "endereco, "
-                + "email, telefone, "
+                + "email, "
+                + "telefone, "
                 + "sexo, "
-                + "nascionalidade, "
+                + "nacionalidade, "
                 + "cargo, "
-                + "salario) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+                + "salario, "
+                + "nome_usuario, "
+                + "senha_usuario) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 
             stmt.setString(1, nomeFunci.getText());
             stmt.setString(2, nascimentoFunci.getText());
@@ -85,6 +95,8 @@ public class CadastroFuncionarioController
             stmt.setString(8, nacionalidadeFunc.getText());
             stmt.setString(9, CargoFuncionario.getText());
             stmt.setString(10, salarioFuncionario.getText());
+            stmt.setString(11, loginFuncionario.getText());
+            stmt.setString(12, senhaFuncionario.getText());
 
             int rowsAffected = stmt.executeUpdate();
             
@@ -107,6 +119,8 @@ public class CadastroFuncionarioController
             nacionalidadeFunc.setText("");
             CargoFuncionario.setText("");
             salarioFuncionario.setText("");
+            loginFuncionario.setText("");
+            senhaFuncionario.setText("");
         
         }
         catch(SQLException e)

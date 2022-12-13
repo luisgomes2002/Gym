@@ -69,7 +69,7 @@ public class CadastroClienteController extends LoginController
                 + "email, "
                 + "telefone, "
                 + "sexo, "
-                + "nascionalidade) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
+                + "nacionalidade) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
 
             stmt.setString(1, nomeCliente.getText());
             stmt.setString(2, nascimentoCliente.getText());

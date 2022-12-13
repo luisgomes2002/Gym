@@ -116,7 +116,7 @@ public class ListaClientesController implements Initializable
     		Cliente cliente;
     		
     		while(rs.next())
-    		{
+    		{//com o bd
     			cliente = new Cliente(rs.getInt("id"), 
 				rs.getString("nome"),
 				rs.getInt("telefone"), 
@@ -125,7 +125,7 @@ public class ListaClientesController implements Initializable
 				rs.getString("endereco"),
 				rs.getInt("cpf"),
 				rs.getString("sexo"), 
-				rs.getString("nascionalidade"), 
+				rs.getString("nacionalidade"), 
 				rs.getString("tipoDeTreino"),
 				rs.getString("peso"), 
 				rs.getString("altura"),
@@ -144,7 +144,7 @@ public class ListaClientesController implements Initializable
     public void showCliente()
     {
     	ObservableList<Cliente> list = getClienteList();
-    	
+    	//com a class
     	ID.setCellValueFactory(new PropertyValueFactory<Cliente, Integer>("id"));
     	Nome.setCellValueFactory(new PropertyValueFactory<Cliente, String>("nome"));
     	Telefone.setCellValueFactory(new PropertyValueFactory<Cliente, Integer>("tel"));

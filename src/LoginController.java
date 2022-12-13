@@ -94,7 +94,7 @@ public class LoginController
             usuario.setNomeUsuario(login.getText());
             usuario.setSenhaUsuario(password.getText());
 
-            String query = "SELECT * FROM usuariofunci where nome_usuario = ? and senha_usuario = ?";
+            String query = "SELECT * FROM funcionario where nome_usuario = ? and senha_usuario = ?";
 
             PreparedStatement stmt = c.prepareStatement(query);   
 

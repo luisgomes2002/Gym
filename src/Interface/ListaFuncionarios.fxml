@@ -36,6 +36,8 @@
                   <TableColumn fx:id="Nacionalidade" prefWidth="75.0" text="NACIONALIDADE" />
                   <TableColumn fx:id="Cargo" prefWidth="75.0" text="CARGO" />
                   <TableColumn fx:id="Salario" prefWidth="75.0" text="SALARIO" />
+                  <TableColumn fx:id="login" prefWidth="75.0" text="LOGIN" />
+                  <TableColumn fx:id="senha" prefWidth="75.0" text="SENHA" />
               </columns>
                <columnResizePolicy>
                   <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
