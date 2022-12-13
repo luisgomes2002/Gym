@@ -14,7 +14,7 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import javafx.scene.Node;
 
-public class CadastroClienteController
+public class CadastroClienteController extends LoginController
 {  
     private Stage stage;
     private Scene scene;
@@ -100,22 +100,21 @@ public class CadastroClienteController
             sexoCliente.setText("");
             nacionalidadeCliente.setText("");
             tipoTreinoCliente.setText("");
-        
         }
         catch(SQLException e)
         {
             e.printStackTrace();
-            System.out.println("Erro na conexao com o banco de dados");
+            System.out.println("Erro na conexao com o banco de dados, fazerCadastroCliente");
         }
     }
 
     @FXML
     void swichToGymApp(ActionEvent event) throws IOException
-    {
+    { 
         root = FXMLLoader.load(getClass().getResource("interface/GymApp.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root, 984, 566);
+        scene = new Scene(root, 984, 566);  
         stage.setScene(scene);
-        stage.show();
+        stage.show();    
     }
 }

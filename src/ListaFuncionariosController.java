@@ -69,13 +69,7 @@ public class ListaFuncionariosController implements Initializable
     private TableView<Funcionario> tableViewFuncionarios;
 
     @FXML
-    private TextField barraDePesquisa;
-
-    @FXML
     private Button bntDeExcluir;
-
-    @FXML
-    private Button bntDePesquisa;
 
     @FXML
     private Button btnVoltar;
@@ -98,6 +92,7 @@ public class ListaFuncionariosController implements Initializable
     @FXML
     private TextField telEdit;
 
+    
     public Connection getConnection()
     {
     	Connection c;
@@ -179,7 +174,7 @@ public class ListaFuncionariosController implements Initializable
     @FXML
     void excluirFuncionario(ActionEvent event)
     {
-        String query = "DELETE FROM funcionario WHERE id = " + barraDePesquisa.getText() + "";
+        String query = "DELETE FROM funcionario WHERE id = " + idEdit.getText() + "";
     	executeQuery(query);
     	showFuncionario();
     }
@@ -230,18 +225,18 @@ public class ListaFuncionariosController implements Initializable
     		}
     		
     		showFuncionario();
-    		
+
+            telEdit.setText("");
+            emailEdit.setText("");
+            enderecoEdit.setText("");
+            cargoEdit.setText("");
+            salarioEdit.setText("");
+            idEdit.setText("");	
     	}
     	catch(SQLException e)
     	{
     		e.printStackTrace();
     	}
-    }
-
-    @FXML
-    void pesquisarFuncionario(ActionEvent event)
-    {
-    	
     }
 
     @FXML

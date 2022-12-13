@@ -6,7 +6,6 @@ public class Usuario
     private String nomeUsuario;
     private String senhaUsuario;
 
-
     public int getIdUsuario()
     {
         return idUsuario;

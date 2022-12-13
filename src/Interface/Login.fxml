@@ -5,27 +5,29 @@
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="344.0" prefWidth="441.0" style="-fx-background-color: #202435;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="LoginController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="494.0" prefWidth="711.0" style="-fx-background-color: #3E3E3E;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="LoginController">
    <children>
-      <TextField fx:id="login" layoutX="140.0" layoutY="160.0" />
-      <Button fx:id="loginButton" layoutX="193.0" layoutY="275.0" mnemonicParsing="false" onAction="#loginButton" text="Login" />
-      <Label layoutX="140.0" layoutY="130.0" text="Username:" textFill="WHITE">
+      <TextField fx:id="login" layoutX="409.0" layoutY="211.0" prefHeight="34.0" prefWidth="203.0" />
+      <Label layoutX="407.0" layoutY="171.0" prefHeight="25.0" prefWidth="74.0" text="Username:" textFill="WHITE">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Label layoutX="160.0" layoutY="27.0" text="Gym" textFill="WHITE">
+      <Label layoutX="450.0" layoutY="69.0" text="Gym" textFill="WHITE">
          <font>
             <Font size="55.0" />
          </font>
       </Label>
-      <PasswordField fx:id="password" layoutX="140.0" layoutY="220.0" />
-      <Label layoutX="140.0" layoutY="190.0" text="Password:" textFill="WHITE">
+      <PasswordField fx:id="password" layoutX="409.0" layoutY="296.0" prefHeight="34.0" prefWidth="203.0" />
+      <Label layoutX="407.0" layoutY="264.0" text="Password:" textFill="WHITE">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
+      <Pane layoutX="-2.0" layoutY="-2.0" prefHeight="494.0" prefWidth="306.0" style="-fx-background-color: #252525;" />
+      <Button fx:id="loginButton" layoutX="441.0" layoutY="367.0" mnemonicParsing="false" onAction="#loginButton" prefHeight="43.0" prefWidth="131.0" style="-fx-background-color: #252525;" text="Login" textFill="WHITE" />
    </children>
 </AnchorPane>

@@ -8,11 +8,11 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #5b6b8b;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CadastroClienteController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #3E3E3E;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CadastroClienteController">
    <children>
       <VBox prefHeight="567.0" prefWidth="209.0" style="-fx-background-color: #202435;" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <Pane prefHeight="670.0" prefWidth="209.0" style="-fx-background-color: #202435;">
+            <Pane prefHeight="670.0" prefWidth="209.0" style="-fx-background-color: #252525;">
                <children>
                   <Label layoutX="40.0" layoutY="38.0" prefHeight="68.0" prefWidth="129.0" text="Gym" textFill="WHITE">
                      <font>
@@ -21,57 +21,31 @@
                   </Label>
                </children>
             </Pane>
-            <Button fx:id="bntVoltar" layoutX="10.0" layoutY="480.0" mnemonicParsing="false" onAction="#swichToGymApp" prefHeight="53.0" prefWidth="209.0" style="-fx-background-color: #202435;" text="Voltar" textFill="WHITE" />
+            <Button fx:id="bntVoltar" layoutX="10.0" layoutY="480.0" mnemonicParsing="false" onAction="#swichToGymApp" prefHeight="53.0" prefWidth="209.0" style="-fx-background-color: #252525;" text="Voltar" textFill="WHITE" />
          </children>
       </VBox>
-      <TextField fx:id="nomeCliente" layoutX="412.0" layoutY="205.0" prefHeight="25.0" prefWidth="346.0" AnchorPane.leftAnchor="412.0" AnchorPane.rightAnchor="226.0" />
-      <TextField fx:id="nascimentoCliente" layoutX="412.0" layoutY="250.0" prefHeight="27.0" prefWidth="642.0" AnchorPane.bottomAnchor="443.0" AnchorPane.leftAnchor="412.0" AnchorPane.rightAnchor="226.0" AnchorPane.topAnchor="250.0" />
-      <TextField fx:id="cpfCliente" layoutX="412.0" layoutY="300.0" prefHeight="25.0" prefWidth="346.0" AnchorPane.leftAnchor="412.0" AnchorPane.rightAnchor="226.0" />
-      <TextField fx:id="enderecoCliente" layoutX="412.0" layoutY="350.0" prefHeight="25.0" prefWidth="346.0" AnchorPane.leftAnchor="412.0" AnchorPane.rightAnchor="226.0" />
-      <TextField fx:id="emailCliente" layoutX="412.0" layoutY="400.0" prefHeight="25.0" prefWidth="346.0" AnchorPane.leftAnchor="412.0" AnchorPane.rightAnchor="226.0" />
-      <TextField fx:id="telefCliente" layoutX="412.0" layoutY="450.0" prefHeight="25.0" prefWidth="346.0" AnchorPane.leftAnchor="412.0" AnchorPane.rightAnchor="226.0" />
-      <Label layoutX="280.0" layoutY="204.0" text="Nome*" textFill="WHITE">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-      <Label layoutX="280.0" layoutY="250.0" text="Nascimento*" textFill="WHITE">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-      <Label layoutX="280.0" layoutY="300.0" text="CPF*" textFill="WHITE">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-      <Label layoutX="280.0" layoutY="350.0" text="Endereco" textFill="WHITE">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-      <Label layoutX="280.0" layoutY="400.0" text="Email" textFill="WHITE">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-      <Label layoutX="280.0" layoutY="450.0" text="Telefone*" textFill="WHITE">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-      <Label layoutX="280.0" layoutY="500.0" text="Sexo*" textFill="WHITE">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-      <Label layoutX="280.0" layoutY="550.0" text="Nacionalidade" textFill="WHITE">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-      <TextField fx:id="sexoCliente" layoutX="411.0" layoutY="500.0" prefHeight="25.0" prefWidth="642.0" AnchorPane.rightAnchor="227.0" />
-      <TextField fx:id="nacionalidadeCliente" layoutX="412.0" layoutY="550.0" prefHeight="25.0" prefWidth="642.0" />
-      <Button fx:id="btnCadastrar" layoutX="672.0" layoutY="618.0" mnemonicParsing="false" onAction="#fazerCadastroCliente" prefHeight="36.0" prefWidth="122.0" style="-fx-background-color: #202435;" text="Cadastrar" textFill="WHITE" />
+      <TextField fx:id="nomeCliente" layoutX="330.0" layoutY="230.0" prefHeight="36.0" prefWidth="759.0" promptText="NOME*" AnchorPane.leftAnchor="330.0" AnchorPane.rightAnchor="191.0" />
+      <TextField fx:id="nascimentoCliente" layoutX="330.0" layoutY="280.0" prefHeight="36.0" prefWidth="759.0" promptText="NASCIMENTO*" AnchorPane.bottomAnchor="404.0" AnchorPane.leftAnchor="330.0" AnchorPane.rightAnchor="191.0" AnchorPane.topAnchor="280.0" />
+      <TextField fx:id="cpfCliente" layoutX="330.0" layoutY="330.0" prefHeight="36.0" prefWidth="759.0" promptText="CPF*" AnchorPane.leftAnchor="330.0" AnchorPane.rightAnchor="191.0" />
+      <TextField fx:id="enderecoCliente" layoutX="330.0" layoutY="380.0" prefHeight="36.0" prefWidth="759.0" promptText="ENDERECO" AnchorPane.leftAnchor="330.0" AnchorPane.rightAnchor="191.0" />
+      <TextField fx:id="emailCliente" layoutX="330.0" layoutY="430.0" prefHeight="36.0" prefWidth="759.0" promptText="EMAIL" AnchorPane.leftAnchor="330.0" AnchorPane.rightAnchor="191.0" />
+      <TextField fx:id="telefCliente" layoutX="330.0" layoutY="480.0" prefHeight="36.0" prefWidth="759.0" promptText="TELEFONE*" AnchorPane.leftAnchor="330.0" AnchorPane.rightAnchor="191.0" />
+      <TextField fx:id="sexoCliente" layoutX="412.0" layoutY="530.0" prefHeight="36.0" prefWidth="759.0" promptText="SEXO*" AnchorPane.rightAnchor="191.0" />
+      <TextField fx:id="nacionalidadeCliente" layoutX="330.0" layoutY="580.0" prefHeight="36.0" prefWidth="759.0" promptText="NACIONALIDADE" />
+      <Button fx:id="btnCadastrar" layoutX="631.0" layoutY="639.0" mnemonicParsing="false" onAction="#fazerCadastroCliente" prefHeight="36.0" prefWidth="122.0" style="-fx-background-color: #252525;" text="Cadastrar" textFill="WHITE" />
+      <Pane layoutX="209.0" layoutY="24.0" prefHeight="157.0" prefWidth="1071.0" style="-fx-background-color: #A5A5A5;">
+         <children>
+            <Label layoutX="32.0" layoutY="71.0" prefHeight="60.0" prefWidth="191.0" text="Clientes" textFill="#252525">
+               <font>
+                  <Font name="Leelawadee Bold" size="36.0" />
+               </font>
+            </Label>
+            <Label layoutX="32.0" layoutY="50.0" prefHeight="29.0" prefWidth="129.0" text="/home/Cadastro" textFill="#252525">
+               <font>
+                  <Font name="Leelawadee Bold" size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
    </children>
 </AnchorPane>

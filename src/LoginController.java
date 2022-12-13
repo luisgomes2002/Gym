@@ -69,7 +69,7 @@ public class LoginController
                 stage.show();
 
                 //Stage stage = (Stage) loginButton.getScene().getWindow();
-                //stage.close();
+                //stage.close();                        
                 System.out.println("ta tudo blz man");
             }
             else
@@ -81,8 +81,7 @@ public class LoginController
         {
             e.printStackTrace();
             System.out.println("Erro na conexao com o banco de dados");
-        }  
-
+        }
 
         try
         { 
@@ -106,14 +105,18 @@ public class LoginController
             
             if(rs.next())
             {   
-                root = FXMLLoader.load(getClass().getResource("interface/GymAppFuncionarios.fxml"));
+                /*root = FXMLLoader.load(getClass().getResource("interface/GymAppFuncionarios.fxml"));
+                stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+                scene = new Scene(root, 984, 566);
+                stage.setScene(scene);
+                stage.show();*/
+
+                root = FXMLLoader.load(getClass().getResource("interface/GymApp.fxml"));
                 stage = (Stage)((Node)event.getSource()).getScene().getWindow();
                 scene = new Scene(root, 984, 566);
                 stage.setScene(scene);
                 stage.show();
 
-                //Stage stage = (Stage) loginButton.getScene().getWindow();
-                //stage.close();
                 System.out.println("ta tudo blz man");
             }
             else
@@ -127,5 +130,4 @@ public class LoginController
             System.out.println("Erro na conexao com o banco de dados");
         }     
     }
-
-    }
+}

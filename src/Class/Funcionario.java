@@ -15,7 +15,7 @@ public class Funcionario
     private String salario;
     
 	public Funcionario(int id, String nome, int tel, String nascimento, String email, String endereco, int cpf,
-			String sexo, String nacionalidade, String cargo, String salario)
+	String sexo, String nacionalidade, String cargo, String salario)
 	{
 		this.id = id;
 		this.nome = nome;

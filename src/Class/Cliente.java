@@ -15,9 +15,8 @@ public class Cliente
     public String peso;
     public String altura;   
     private String foco;
-    private String imc;
 
-    public Cliente(int id, String nome, int tel, String nascimento, String email, String endereco, int cpf, String sexo, String nacionalidade, String treino, String peso, String altura, String foco, String imc)
+    public Cliente(int id, String nome, int tel, String nascimento, String email, String endereco, int cpf, String sexo, String nacionalidade, String treino, String peso, String altura, String foco)
     {
     	this.id = id;
         this.nome = nome;
@@ -32,7 +31,6 @@ public class Cliente
         this.peso = peso;
         this.altura = altura;
         this.foco = foco;
-        this.imc = imc;
     }
 
     public int getId()
@@ -49,38 +47,47 @@ public class Cliente
     {
         return nome;
     }
+    
     public void setNome(String nome)
     {
         this.nome = nome;
     }
+
     public int getTel()
     {
         return tel;
     }
+
     public void setTel(int tel)
     {
         this.tel = tel;
     }
+
     public String getNascimento()
     {
         return nascimento;
     }
+
     public void setNascimento(String nascimento)
     {
         this.nascimento = nascimento;
     }
+
     public String getEmail()
     {
         return email;
     }
+
     public void setEmail(String email) 
-{
+    {
         this.email = email;
     }
+
     public String getEndereco()
     {
         return endereco;
     }
+
     public void setEndereco(String endereco)
     {
         this.endereco = endereco;
@@ -89,6 +96,7 @@ public class Cliente
     {
         return cpf;
     }
+
     public void setCpf(int cpf)
     {
         this.cpf = cpf;
@@ -153,18 +161,4 @@ public class Cliente
     {
         this.foco = foco;
     }
-
-    public String getImc()
-    {
-        return imc;
-    }
-
-    public void setImc(String imc)
-    {
-        this.imc = imc;
-    }
-
 }
-
-
-

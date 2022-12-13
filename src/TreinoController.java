@@ -45,9 +45,6 @@ public class TreinoController implements Initializable
     private TableColumn<Cliente, Integer> ID;
 
     @FXML
-    private TableColumn<Cliente, String> IMC;
-
-    @FXML
     private TableColumn<Cliente, String> Nome;
 
     @FXML
@@ -104,25 +101,24 @@ public class TreinoController implements Initializable
     	try
     	{
     		stmt = c.createStatement();
-    		rs = stmt.executeQuery(query);   
+    		rs = stmt.executeQuery(query);
     		Cliente cliente;
     		
     		while(rs.next())
     		{
     			cliente = new Cliente(rs.getInt("id"), 
-					rs.getString("nome"),
-					rs.getInt("telefone"), 
-					rs.getString("nascimento"), 
-					rs.getString("email"), 
-					rs.getString("endereco"),
-					rs.getInt("cpf"),
-					rs.getString("sexo"), 
-					rs.getString("nascionalidade"), 
-					rs.getString("tipoDeTreino"),
-                    rs.getString("peso"), 
-                    rs.getString("altura"),
-                    rs.getString("foco"), 
-                    rs.getString("imc"));
+                rs.getString("nome"),
+                rs.getInt("telefone"), 
+                rs.getString("nascimento"), 
+                rs.getString("email"), 
+                rs.getString("endereco"),
+                rs.getInt("cpf"),
+                rs.getString("sexo"), 
+                rs.getString("nascionalidade"), 
+                rs.getString("tipoDeTreino"),
+                rs.getString("peso"), 
+                rs.getString("altura"),
+                rs.getString("foco"));
     			
     			clienteList.add(cliente);
     		}
@@ -150,7 +146,6 @@ public class TreinoController implements Initializable
         Peso.setCellValueFactory(new PropertyValueFactory<Cliente, String>("peso"));
         Altura.setCellValueFactory(new PropertyValueFactory<Cliente, String>("altura"));
         Foco.setCellValueFactory(new PropertyValueFactory<Cliente, String>("foco"));
-        IMC.setCellValueFactory(new PropertyValueFactory<Cliente, String>("imc"));
 
         tableViewTreino.setItems(list);
     }
@@ -167,13 +162,11 @@ public class TreinoController implements Initializable
     		
     		PreparedStatement stmt = c.prepareStatement("UPDATE gymdatabase.cliente SET peso = ?, altura = ?, foco = ?, tipoDeTreino = ? WHERE id = ?");
     		
-    		stmt.setString(1, pesoEdit.getText());//番号　do krl
+    		stmt.setString(1, pesoEdit.getText());//番号 do krl
     		stmt.setString(2, alturaEdit.getText());
             stmt.setString(3, focoEdit.getText());
     		stmt.setString(4, treinoEdit.getText());
     		stmt.setString(5, idEdit.getText());
-    		
-            
 
     		int rowsAffected = stmt.executeUpdate();
     		
@@ -207,7 +200,7 @@ public class TreinoController implements Initializable
     {
         root = FXMLLoader.load(getClass().getResource("interface/GymApp.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root, 1280, 720);
+        scene = new Scene(root, 984, 566);
         stage.setScene(scene);
         stage.show();    
     }

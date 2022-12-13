@@ -65,13 +65,7 @@ public class ListaClientesController implements Initializable
     private TableView<Cliente> tableViewClientes;
 
     @FXML
-    private TextField barraDePesquisa;
-
-    @FXML
     private Button bntDeExcluir;
-
-    @FXML
-    private Button bntDePesquisa;
 
     @FXML
     private Button btnVoltar;
@@ -105,7 +99,6 @@ public class ListaClientesController implements Initializable
 			e.printStackTrace();
 			return null;
 		}
-    	
     }
     
     public ObservableList<Cliente> getClienteList()
@@ -125,19 +118,18 @@ public class ListaClientesController implements Initializable
     		while(rs.next())
     		{
     			cliente = new Cliente(rs.getInt("id"), 
-					rs.getString("nome"),
-					rs.getInt("telefone"), 
-					rs.getString("nascimento"), 
-					rs.getString("email"), 
-					rs.getString("endereco"),
-					rs.getInt("cpf"),
-					rs.getString("sexo"), 
-					rs.getString("nascionalidade"), 
-					rs.getString("tipoDeTreino"),
-					rs.getString("peso"), 
-            		rs.getString("altura"),
-                	rs.getString("foco"), 
-                	rs.getString("imc"));
+				rs.getString("nome"),
+				rs.getInt("telefone"), 
+				rs.getString("nascimento"), 
+				rs.getString("email"), 
+				rs.getString("endereco"),
+				rs.getInt("cpf"),
+				rs.getString("sexo"), 
+				rs.getString("nascionalidade"), 
+				rs.getString("tipoDeTreino"),
+				rs.getString("peso"), 
+				rs.getString("altura"),
+				rs.getString("foco"));
     			
     			clienteList.add(cliente);
     		}
@@ -191,7 +183,7 @@ public class ListaClientesController implements Initializable
     @FXML
     void excluirCliente(ActionEvent event)
     {
-    	String query = "DELETE FROM cliente WHERE id = " + barraDePesquisa.getText() + "";
+    	String query = "DELETE FROM cliente WHERE id = " + idEdit.getText() + "";
     	executeQuery(query);
     	showCliente();
     }
@@ -248,23 +240,15 @@ public class ListaClientesController implements Initializable
     	System.out.println("id" + cliente.getId());
     	System.out.println("nome" + cliente.getNome());
     }*/
-    
-	@FXML
-    void pesquisarCliente(ActionEvent event)
-    {
-    	
-    }
-
 
     @FXML
     void swichToGymApp(ActionEvent event) throws IOException
     {
         root = FXMLLoader.load(getClass().getResource("interface/GymApp.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root,  984, 566);
+        scene = new Scene(root, 984, 566);
         stage.setScene(scene);
         stage.show();
     }
-
 }
 

@@ -12,7 +12,7 @@ public class App extends Application
         try
         {
             Parent root = FXMLLoader.load(getClass().getResource("interface/Login.fxml"));
-            Scene scene = new Scene(root, 440, 350);
+            Scene scene = new Scene(root, 720, 490);
             scene.getStylesheets().add(getClass().getResource("css/application.css").toExternalForm());
             //String css = this.getClass().getResource("application.css").toExternalForm();//使ってねぇ
             //scene.getStylesheets().add(css);//これも
