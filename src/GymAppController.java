@@ -23,6 +23,9 @@ public class GymAppController
     private Parent root;
 
     @FXML
+    private Button Voltar;
+
+    @FXML
     private Button loginbnt;
 
     @FXML
@@ -64,7 +67,7 @@ public class GymAppController
         stage.setScene(scene);
         stage.show();
     }
-
+    //método
     @FXML
     private void loginButton(ActionEvent event) throws IOException 
     {
@@ -125,7 +128,7 @@ public class GymAppController
     {
         root = FXMLLoader.load(getClass().getResource("interface/Senha.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root, 370, 200);
+        scene = new Scene(root, 370, 230);
         stage.setScene(scene);
         stage.show();
     }

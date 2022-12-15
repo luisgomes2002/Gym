@@ -20,7 +20,7 @@
                </children></Pane>
             <Button fx:id="bntcadastrarCliente" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#casdastraClien" prefHeight="53.0" prefWidth="239.0" style="-fx-background-color: #252525;" text="Cadastrar Clientes" textFill="WHITE" />
             <Button fx:id="bntcadastrarFuncionario" layoutX="10.0" layoutY="63.0" mnemonicParsing="false" onAction="#casdastraFunci" prefHeight="53.0" prefWidth="239.0" style="-fx-background-color: #252525;" text="Cadastrar Funcionarios" textFill="WHITE" />
-            <Button fx:id="bntFazerTreino" layoutX="10.0" layoutY="116.0" mnemonicParsing="false" onAction="#listTreino" prefHeight="53.0" prefWidth="239.0" style="-fx-background-color: #252525;" text="Fazer Treinos" textFill="WHITE" />
+            <Button fx:id="bntFazerTreino" layoutX="10.0" layoutY="116.0" mnemonicParsing="false" onAction="#listTreino" prefHeight="53.0" prefWidth="239.0" style="-fx-background-color: #252525;" text="Treino" textFill="WHITE" />
             <Button fx:id="btnListaCliene" layoutX="10.0" layoutY="169.0" mnemonicParsing="false" onAction="#listClient" prefHeight="53.0" prefWidth="239.0" style="-fx-background-color: #252525;" text="Lista de Clientes" textFill="WHITE" />
             <Button fx:id="bntListaFuncionarios" layoutX="10.0" layoutY="222.0" mnemonicParsing="false" onAction="#listFunc" prefHeight="53.0" prefWidth="239.0" style="-fx-background-color: #252525;" text="Lista de Funcionarios" textFill="WHITE" />
             <Button fx:id="bntSair" layoutX="10.0" layoutY="506.0" mnemonicParsing="false" onAction="#sair" prefHeight="53.0" prefWidth="239.0" style="-fx-background-color: #252525;" text="Sair" textFill="WHITE" />

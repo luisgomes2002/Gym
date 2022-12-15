@@ -1,7 +1,7 @@
 package Class;
 
 public class Funcionario
-{
+{	//variaveis
 	private int id;
     private String nome;
     private int tel;
